@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { IoSettingsSharp } from "react-icons/io5";
-import { AiFillStar } from "react-icons/ai";
+import { FaStar } from "react-icons/fa";
 
 const ProfileHeader = ({
-  profilePicture,
-  userName,
-  fullName,
+  picture,
+  username,
+  name,
   email,
   stars,
 }) => {
@@ -14,19 +14,19 @@ const ProfileHeader = ({
       <div className="pb-3.5 flex flex-row">
         <Image
           className="bg-code-white rounded-full w-20 h-20"
-          src={profilePicture}
-          alt={fullName + "'s Profile Picture"}
+          src={picture}
+          alt={name + "'s Profile Picture"}
         />
         <div className="absolute top-2.5 right-5">
           <IoSettingsSharp className="text-code-white text-xl" />
         </div>
       </div>
-      <div className="text-code-white text-xl">{userName}</div>
-      <div className="text-code-lightgray text-xs">{fullName}</div>
+      <div className="text-code-white text-xl">{username}</div>
+      <div className="text-code-lightgray text-xs">{name}</div>
       <div className="text-code-lightgray text-xs">{email}</div>
       <div className="flex flex-row pt-4 items-center">
-        <AiFillStar className="text-code-yellow text-xl" />
-        <div className="text-code-lightgray text-xs pl-0.5">{stars}</div>
+        <FaStar className="text-code-yellow text-2xl" />
+        <div className="text-code-lightgray text-xs pl-0.5 pt-0.5">{stars}</div>
       </div>
     </div>
   );
