@@ -2,13 +2,7 @@ import Image from "next/image";
 import { IoSettingsSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 
-const ProfileHeader = ({
-  picture,
-  username,
-  name,
-  email,
-  stars,
-}) => {
+const ProfileHeader = ({ picture, username, name, email, stars }) => {
   return (
     <div className="bg-code-darkgray rounded w-80 h-60 flex flex-col justify-center items-center relative font-semibold">
       <div className="pb-3.5 flex flex-row">
