@@ -25,8 +25,8 @@ const ProfileHeader = ({
       <div className="text-code-lightgray text-xs">{fullName}</div>
       <div className="text-code-lightgray text-xs">{email}</div>
       <div className="flex flex-row pt-4 items-center">
-        <AiFillStar className="text-code-yellow text-2xl" />
-        <div className="text-code-lightgray text-xs">{stars}</div>
+        <AiFillStar className="text-code-yellow text-xl" />
+        <div className="text-code-lightgray text-xs pl-0.5">{stars}</div>
       </div>
     </div>
   );
