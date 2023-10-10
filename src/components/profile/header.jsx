@@ -11,9 +11,7 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
           src={picture}
           alt={name + "'s Profile Picture"}
         />
-        <div className="absolute top-2.5 right-5">
-          <IoSettingsSharp className="text-code-white text-xl" />
-        </div>
+        <IoSettingsSharp className="text-code-white text-xl absolute top-2.5 right-5" />
       </div>
       <div className="text-code-white text-xl">{username}</div>
       <div className="text-code-lightgray text-xs">{name}</div>
