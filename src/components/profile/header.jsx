@@ -17,7 +17,7 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
       <div className="text-code-lightgray text-xs">{name}</div>
       <div className="text-code-lightgray text-xs">{email}</div>
       <div className="flex flex-row pt-4 items-center">
-        <FaStar className="text-code-yellow text-2xl" />
+        <FaStar className="text-code-lightorange text-2xl" />
         <div className="text-code-lightgray text-xs pl-0.5 pt-0.5">{stars}</div>
       </div>
     </div>
