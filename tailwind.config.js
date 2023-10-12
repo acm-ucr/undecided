@@ -26,11 +26,7 @@ module.exports = {
         red: "#FF4B1E",
       },
     },
-    extend: {
-      transitionProperty: {
-        width: "width",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
