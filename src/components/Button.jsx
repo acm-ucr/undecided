@@ -7,15 +7,15 @@ const Next = ({ text, color, onClick }) => {
   const [hover, setHover] = useState(false);
   return (
     <button
-      className={`${COLORS[color].bg}  ${COLORS[color].text} p-3 w-20 h-20 rounded-full group transition-all hover:w-60 ${COLORS[color].hoverbg} ${COLORS[color].hovertext} ease-in-out self-center`}
+      className={`${COLORS[color].bg}  ${COLORS[color].text} p-3 rounded-full transition-all ${COLORS[color].hoverbg} ${COLORS[color].hovertext} ease-in-out flex items-center justify-center text-4xl`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={onClick}
     >
       {!hover ? (
-        <TbArrowRight className="text-5xl transition group-hover:opacity-0" />
+        <TbArrowRight className="transition" />
       ) : (
-        <span className="text-2xl">{text}</span>
+        <span className="py-1 text-2xl">{text}</span>
       )}
     </button>
   );
