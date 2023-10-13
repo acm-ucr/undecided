@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IoSettingsSharp } from "react-icons/io5";
+import { RiSettings3Fill } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
 
 const ProfileHeader = ({ picture, username, name, email, stars }) => {
@@ -11,7 +11,7 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
           src={picture}
           alt={name + "'s Profile Picture"}
         />
-        <IoSettingsSharp className="text-code-white text-xl absolute top-2.5 right-5" />
+        <RiSettings3Fill className="text-code-white text-xl absolute top-2.5 right-5" />
       </div>
       <div className="text-code-white text-xl">{username}</div>
       <div className="text-code-lightgray text-xs">{name}</div>
