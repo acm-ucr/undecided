@@ -1,5 +1,7 @@
+import Register from "../../components/register/Register";
+
 const Page = () => {
-  return <div>Page</div>;
+  return <Register name={"Ashley"} />;
 };
 
 export default Page;
