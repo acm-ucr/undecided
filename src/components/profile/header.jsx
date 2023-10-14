@@ -4,8 +4,8 @@ import { FaStar } from "react-icons/fa";
 
 const ProfileHeader = ({ picture, username, name, email, stars }) => {
   return (
-    <div className="bg-code-darkgray rounded w-80 h-60 flex flex-col justify-center items-center relative font-semibold">
-      <div className="pb-3.5 flex flex-row">
+    <div className="bg-code-darkgray rounded w-1/5 flex flex-col justify-center items-center relative font-semibold py-3.5">
+      <div className="flex flex-row mb-1.5">
         <Image
           className="bg-code-white rounded-full w-20 h-20"
           src={picture}
@@ -14,11 +14,11 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
         <RiSettings3Fill className="text-code-white text-xl absolute top-2.5 right-5" />
       </div>
       <div className="text-code-white text-xl">{username}</div>
-      <div className="text-code-lightgray text-xs">{name}</div>
-      <div className="text-code-lightgray text-xs">{email}</div>
-      <div className="flex flex-row pt-4 items-center">
+      <div className="text-code-lightergray text-xs">{name}</div>
+      <div className="text-code-lightergray text-xs">{email}</div>
+      <div className="flex flex-row mt-2.5 items-center space-x-0.5 space-y-0.5">
         <FaStar className="text-code-lightorange text-2xl" />
-        <div className="text-code-lightgray text-xs pl-0.5 pt-0.5">{stars}</div>
+        <div className="text-code-lightergray text-xs">{stars}</div>
       </div>
     </div>
   );
