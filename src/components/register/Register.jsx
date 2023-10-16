@@ -10,7 +10,7 @@ const Register = ({ name }) => {
             Hello <span className="text-[#dd8ab8]">{name}</span>, <br /> Create
             your username!
           </h1>
-          <Input />
+          <Input label="Username" placeholder="Enter a username" />
         </div>
         <Button
           text="Get Started"
