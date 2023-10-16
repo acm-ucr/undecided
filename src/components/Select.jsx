@@ -9,7 +9,7 @@ const Toggle = ({ onClick, show, currentOption, placeholder }) => {
   return (
     <button
       onClick={onClick}
-      className="bg-code-darkgray text-code-white w-1/6 h-10 rounded-lg flex items-center justify-between px-2.5 py-3"
+      className="bg-code-darkgray text-code-white w-1/6 h-10 rounded-lg flex items-center justify-between px-3 py-3"
     >
       {currentOption || placeholder}
       <BiSolidDownArrow
