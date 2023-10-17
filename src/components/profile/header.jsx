@@ -14,11 +14,11 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
         <RiSettings3Fill className="text-code-white text-xl absolute top-2.5 right-5" />
       </div>
       <div className="text-code-white text-xl">{username}</div>
-      <div className="text-code-lightergray text-xs">{name}</div>
-      <div className="text-code-lightergray text-xs">{email}</div>
+      <div className="text-code-lightgray text-xs">{name}</div>
+      <div className="text-code-lightgray text-xs">{email}</div>
       <div className="flex flex-row mt-2.5 items-center space-x-0.5 space-y-0.5">
         <FaStar className="text-code-lightorange text-2xl" />
-        <div className="text-code-lightergray text-xs">{stars}</div>
+        <div className="text-code-lightgray text-xs">{stars}</div>
       </div>
     </div>
   );
