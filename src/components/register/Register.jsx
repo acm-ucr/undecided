@@ -12,7 +12,9 @@ const Register = ({ name }) => {
           </p>
           <Input label="Username" placeholder="Enter a username" />
         </div>
-        <Button text="Get Started" color="lime" className="h-[90%] my-auto" />
+        <div className="h-[90%] my-auto">
+          <Button text="Get Started" color="lime" />
+        </div>
       </div>
     </div>
   );
