@@ -7,12 +7,12 @@ const USERNAME_FIELD = "Username";
 const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Form data: ${JSON.stringify(formData)}`);
+    console.log(`Form data: ${JSON.stringify(data)}`);
   };
-  const [formData, setFormData] = useState({ [USERNAME_FIELD]: "" });
+  const [data, setData] = useState({ [USERNAME_FIELD]: "" });
 
-  const setFormDataFromChangeEvent = (event, fieldName) => {
-    setFormData({ ...formData, [fieldName]: event.target.value });
+  const handleChange = (event, fieldName) => {
+    setData({ ...data, [fieldName]: event.target.value });
   };
 
   return (
@@ -22,8 +22,8 @@ const Register = () => {
           name={USERNAME_FIELD}
           placeholder="Enter a username"
           classes="mt-5 w-1/2 ml-5"
-          value={formData[USERNAME_FIELD]}
-          onChange={(e) => setFormDataFromChangeEvent(e, USERNAME_FIELD)}
+          value={data[USERNAME_FIELD]}
+          onChange={(e) => handleChange(e, USERNAME_FIELD)}
         />
       </form>
     </div>
