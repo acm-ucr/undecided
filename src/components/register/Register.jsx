@@ -1,20 +1,29 @@
 "use client";
 import Input from "../Input.jsx";
+import { useState } from "react";
+
+const USERNAME_FIELD = "Username";
 
 const Register = () => {
-  const recordUserInfo = (submitEvent) => {
-    submitEvent.preventDefault();
-    const username = submitEvent.target[0].value;
-    console.log(`Username: ${username}`);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(`Form data: ${JSON.stringify(formData)}`);
+  };
+  const [formData, setFormData] = useState({ [USERNAME_FIELD]: "" });
+
+  const setFormDataFromChangeEvent = (event, fieldName) => {
+    setFormData({ ...formData, [fieldName]: event.target.value });
   };
 
   return (
     <div>
-      <form onSubmit={recordUserInfo}>
+      <form onSubmit={handleSubmit}>
         <Input
-          name={"Username"}
-          placeholder={"Enter a username"}
-          classes={"mt-5 w-[50%] ml-5"}
+          name={USERNAME_FIELD}
+          placeholder="Enter a username"
+          classes="mt-5 w-1/2 ml-5"
+          value={formData[USERNAME_FIELD]}
+          onChange={(e) => setFormDataFromChangeEvent(e, USERNAME_FIELD)}
         />
       </form>
     </div>

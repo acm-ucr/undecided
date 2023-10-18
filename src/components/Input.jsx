@@ -1,8 +1,6 @@
-"use client";
-
 const Input = ({ value, onChange, name, placeholder, classes }) => {
   return (
-    <div className={`flex items-center w-full text-white ${classes}`}>
+    <div className={`flex items-center w-1/2 text-white ${classes}`}>
       <h6 className="text-xs px-1 z-40 bg-code-black flex fixed ml-3 mt-[-33px] select-none">
         {name}
       </h6>
