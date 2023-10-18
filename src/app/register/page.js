@@ -1,7 +1,9 @@
 import Register from "../../components/register/Register";
 
 const Page = () => {
-  return <Register name={"Ashley"} />;
+  const Name = "";
+
+  return <Register name={Name} />;
 };
 
 export default Page;
