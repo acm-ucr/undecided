@@ -5,13 +5,13 @@ import { BsDot } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
 
-const Toggle = ({ onClick, show, currentOption, placeholder }) => {
+const Toggle = ({ onClick, show, current, placeholder }) => {
   return (
     <button
       onClick={onClick}
       className="bg-code-darkgray text-code-white w-1/6 py-2 rounded-lg flex items-center justify-between px-3"
     >
-      {currentOption || placeholder}
+      {current || placeholder}
       <BiSolidUpArrow
         className={`${
           show && "rotate-180"
@@ -21,7 +21,7 @@ const Toggle = ({ onClick, show, currentOption, placeholder }) => {
   );
 };
 
-const Select = ({ currentOption, setCurrentOption, placeholder, options }) => {
+const Select = ({ current, setCurrent, placeholder, options }) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -33,7 +33,7 @@ const Select = ({ currentOption, setCurrentOption, placeholder, options }) => {
     >
       <Dropdown.Toggle
         show={show}
-        currentOption={currentOption}
+        current={current}
         placeholder={placeholder}
         as={Toggle}
       />
@@ -41,12 +41,12 @@ const Select = ({ currentOption, setCurrentOption, placeholder, options }) => {
       <Dropdown.Menu className="!bg-code-darkgray w-1/6 pt-10">
         {options.map((option, index) => (
           <Dropdown.Item
-            className="hover:!bg-code-lightgray !bg-code-darkgray !text-code-white !flex !flex-row !justify-between !items-center"
+            className="hover:!bg-code-gray !bg-code-darkgray !text-code-white !flex !flex-row !justify-between !items-center"
             key={index}
-            onClick={() => setCurrentOption(option)}
+            onClick={() => setCurrent(option)}
           >
             {option}
-            {option == currentOption && <BsDot className="text-3xl" />}
+            {option === current && <BsDot className="text-3xl" />}
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>
