@@ -1,9 +1,9 @@
 const Input = ({ value, onChange, name, placeholder, classes }) => {
   return (
     <div className={`flex items-center w-1/2 text-white ${classes}`}>
-      <h6 className="text-xs px-1 z-40 bg-code-black flex fixed ml-3 mt-[-33px] select-none">
+      <p className="text-xs px-1 z-40 bg-code-black flex fixed ml-3 mb-[3%] select-none">
         {name}
-      </h6>
+      </p>
       <div className="w-full">
         <input
           name={name}
