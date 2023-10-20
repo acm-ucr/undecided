@@ -7,11 +7,10 @@ const Splash = () => {
       <p className="text-2xl mb-8">
         Welcome to <span className="text-code-pink">Apollo</span>!
       </p>
-      <Link
-        href="/dashboard"
-        className="py-3 px-4 bg-code-purple text-code-white rounded-full"
-      >
-        Go to Dashboard
+      <Link href="/dashboard">
+        <button className="py-3 px-4 bg-code-purple text-code-white rounded-full">
+          Go to Dashboard
+        </button>
       </Link>
     </div>
   );
