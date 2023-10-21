@@ -9,13 +9,15 @@ const Search = ({ value, onChange, placeholder, classes }) => {
   };
 
   return (
-    <div className={`m-[5%] flex flex-row bg-transparent text-base ${classes}`}>
+    <div
+      className={`m-[5%] flex flex-row bg-transparent rounded-xl border-2 text-base ${classes}`}
+    >
       <BiSearch className="mt-[10px] ml-3 text-lg text-code-white fixed" />
       <input
         name="search"
         type="text"
         placeholder={placeholder}
-        className="p-[6px] pl-10 bg-transparent text-code-white placeholder:text-code-white rounded-xl border-2"
+        className="p-[6px] pl-10 bg-transparent placeholder:text-code-white text-code-white w-full rounded-xl"
         value={value}
         onChange={onChange}
         onSubmit={handleSubmit}

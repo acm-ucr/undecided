@@ -1,5 +1,11 @@
+import Search from "../Search";
 const Register = () => {
-  return <div>Register</div>;
+  return (
+    <div>
+      Register
+      <Search />
+    </div>
+  );
 };
 
 export default Register;
