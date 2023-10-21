@@ -1,7 +1,7 @@
 const Input = ({ value, onChange, name, placeholder, classes, type }) => {
   return (
     <div className={`flex items-center w-1/2 text-white ${classes}`}>
-      <p className="text-xs px-1 bg-code-black fixed ml-3 mb-[3%]">{name}</p>
+      <p className="text-xs px-1 bg-code-black absolute ml-3 mb-[3%]">{name}</p>
       <div>
         <input
           name={name}
