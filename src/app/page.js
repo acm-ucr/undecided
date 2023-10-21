@@ -1,11 +1,7 @@
-import Button from "@/components/Button";
+import Landing from "@/components/landing/Landing";
 
 const Page = () => {
-  return (
-    <div className="flex justify-end">
-      <Button text="Get Started" color="lime" />
-    </div>
-  );
+  return <Landing />;
 };
 
 export default Page;
