@@ -1,9 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import { RiSettings3Fill } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
+import { useState } from "react";
+import ProfileModal from "./modal";
 
 const ProfileHeader = ({ picture, username, name, email, stars }) => {
+
+  const [modal, setModal] = useState(false);
+
   return (
+    <div>
+    {modal && <ProfileModal picture={picture} setModal={setModal} />}
     <div className="bg-code-darkgray rounded w-1/5 flex flex-col justify-center items-center relative font-semibold py-3.5">
       <div className="flex flex-row mb-1.5">
         <Image
@@ -11,7 +20,7 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
           src={picture}
           alt={name + "'s Profile Picture"}
         />
-        <RiSettings3Fill className="text-code-white text-xl absolute top-2.5 right-5" />
+        <RiSettings3Fill className="text-code-white text-xl absolute top-2.5 right-5" onClick={() => setModal(!modal)} />
       </div>
       <div className="text-code-white text-xl">{username}</div>
       <div className="text-code-lightgray text-xs">{name}</div>
@@ -20,6 +29,7 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
         <FaStar className="text-code-lightorange text-2xl" />
         <div className="text-code-lightgray text-xs">{stars}</div>
       </div>
+    </div>
     </div>
   );
 };
