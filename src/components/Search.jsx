@@ -1,11 +1,12 @@
 "use client";
+import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
 const Search = ({ placeholder }) => {
+  const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchText = e.target[0].value;
-    console.log(`Searched: ${searchText}`);
+    console.log(`Searched: ${value}`);
   };
 
   return (
@@ -16,6 +17,8 @@ const Search = ({ placeholder }) => {
           name="search"
           type="text"
           placeholder={placeholder}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
           className="p-[6px] bg-transparent placeholder:text-code-white text-code-white rounded-xl focus:outline-none w-full"
         />
       </form>
