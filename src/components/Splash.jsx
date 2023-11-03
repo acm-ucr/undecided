@@ -18,9 +18,9 @@ const Splash = ({ runs, points }) => {
         <p className="text-4xl  font-semibold text-code-white">
           Congratulations!
         </p>
-        <text className="h-1/3 text-2xl text-code-white text-center m-3">
+        <p className="text-2xl text-code-white text-center m-3">
           You passed all test cases within {runs} runs!
-        </text>
+        </p>
       </div>
       <div className="flex flex-col space-y-3 w-full h-1/4 items-center justify-center">
         <Link
