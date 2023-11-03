@@ -1,19 +1,9 @@
-"use client";
-import Input from "../Input.jsx";
-
-const USERNAME_FIELD = "Username";
-
+import Search from "../Search";
 const Register = () => {
-  const usernameSubmitHandler = (userInput) => {
-    console.log(`Username in register: ${userInput}`);
-  };
   return (
     <div>
-      <Input
-        name={USERNAME_FIELD}
-        placeholder="Enter a username"
-        onSubmit={usernameSubmitHandler}
-      />
+      Register
+      <Search />
     </div>
   );
 };
