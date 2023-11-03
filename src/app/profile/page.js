@@ -1,5 +1,6 @@
 import ProfileHeader from "@/components/profile/header";
-import Kanban from "@/components/profile/Kanban";
+import Kanban from "@/components/profile/kanban/Kanban";
+
 const Page = () => {
   const profileInfo = {
     name: "Dummy McDumDum",
