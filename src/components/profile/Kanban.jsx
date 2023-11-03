@@ -3,7 +3,7 @@ import Select from "@/components/Select";
 import { useState } from "react";
 import { COLORS } from "@/data/Difficulty";
 
-const Card = ({ title, difficulty, operation }) => {
+const Card = ({ title, difficulty, tag }) => {
   return (
     <div className="border-2 border-code-darkgray rounded-2xl p-4 my-4">
       <div className="flex text-lg justify-between">
@@ -17,7 +17,7 @@ const Card = ({ title, difficulty, operation }) => {
 
 const Columns = ({ title, problems, setProblems }) => {
   return (
-    <div className="w-full mx-2 my-4">
+    <div className="w-full my-4">
       <div className="border-2 border-code-darkgray text-code-white rounded-2xl p-3">
         {title}
       </div>
@@ -41,27 +41,29 @@ const Filters = ({
   topics,
 }) => {
   return (
-    <div className="flex w-full items-center justify-between">
-      <div className="text-2xl text-code-white">Problem Management</div>
-      <Select
-        current={difficulty}
-        setCurrent={setDifficulty}
-        placeholder="Difficulty"
-        options={difficulties}
-      />
-      <Select
-        current={topic}
-        setCurrent={setTopic}
-        placeholder="Topic"
-        options={topics}
-      />
+    <div className="flex w-full text-white">
+      <div className="text-2xl w-10/12">Problem Management</div>
+      <div className="flex flex-row w-1/4 gap-3 justify-between">
+        <Select
+          current={difficulty}
+          setCurrent={setDifficulty}
+          placeholder="Difficulty"
+          options={difficulties}
+        />
+        <Select
+          current={topic}
+          setCurrent={setTopic}
+          placeholder="Topic"
+          options={topics}
+        />
+      </div>
     </div>
   );
 };
 
 const Kanban = () => {
-  const difficulties = ["Difficulty", "Easy", "Medium", "Hard"];
-  const topics = ["Topics", "Operations", "Conditionals"];
+  const difficulties = ["Easy", "Medium", "Hard"];
+  const topics = ["Operations", "Conditionals"];
   const [difficulty, setDifficulty] = useState("Difficulty");
   const [topic, setTopic] = useState("Topics");
   const [problems, setProblems] = useState([
@@ -70,21 +72,19 @@ const Kanban = () => {
 
   return (
     <div className="w-screen p-8">
-      <div className="w-full">
-        <Filters
-          difficulty={difficulty}
-          setDifficulty={setDifficulty}
-          topic={topic}
-          setTopic={setTopic}
-          difficulties={difficulties}
-          topics={topics}
-        />
-      </div>
+      <Filters
+        difficulty={difficulty}
+        setDifficulty={setDifficulty}
+        topic={topic}
+        setTopic={setTopic}
+        difficulties={difficulties}
+        topics={topics}
+      />
 
-      <div className="flex w-full columns-3 justify-center">
-        <Columns title="To-do" problems={problems} setProblems={setProblems} />
+      <div className="flex w-full columns-3 justify-center gap-3">
+        <Columns title="To-Do" problems={problems} setProblems={setProblems} />
         <Columns
-          title="In-progress"
+          title="In-Progress"
           problems={problems}
           setProblems={setProblems}
         />
