@@ -4,7 +4,7 @@ import Image from "next/image";
 import { RiSettings3Fill } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
-import ProfileModal from "./modal";
+import ProfileModal from "./Modal";
 
 const ProfileHeader = ({ picture, username, name, email, stars }) => {
   const [modal, setModal] = useState(false);
