@@ -2,10 +2,9 @@ import Image from "next/image";
 import Input from "../Input";
 
 const ProfileModal = ({ picture, setModal }) => {
-
   const saveProfile = () => {
-    console.log("TODO: SAVE PROFILE TO SESSION")
-  }
+    console.log("TODO: SAVE PROFILE TO SESSION");
+  };
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-1/2 h-3/5 rounded-xl">
@@ -21,9 +20,9 @@ const ProfileModal = ({ picture, setModal }) => {
             src={picture}
           />
         </div>
-          <Input />
-          <Input />
-          <Input />
+        <Input />
+        <Input />
+        <Input />
       </div>
     </div>
   );

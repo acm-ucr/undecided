@@ -9,12 +9,12 @@ const Page = () => {
   };
 
   return (
-      <ProfileHeader
-        name={profileInfo.name}
-        username={profileInfo.username}
-        email={profileInfo.email}
-        stars={profileInfo.stars}
-      />
+    <ProfileHeader
+      name={profileInfo.name}
+      username={profileInfo.username}
+      email={profileInfo.email}
+      stars={profileInfo.stars}
+    />
   );
 };
 
