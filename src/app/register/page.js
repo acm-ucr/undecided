@@ -1,5 +1,11 @@
+import Register from "@/components/register/Register";
+
 const Page = () => {
-  return <div>Page</div>;
+  return (
+    <div>
+      <Register />
+    </div>
+  );
 };
 
 export default Page;
