@@ -1,9 +1,11 @@
-import Register from "../../components/register/Register";
+import Register from "@/components/register/Register";
 
 const Page = () => {
-  const Name = "";
-
-  return <Register name={Name} />;
+  return (
+    <div>
+      <Register />
+    </div>
+  );
 };
 
 export default Page;

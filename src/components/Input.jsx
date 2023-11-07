@@ -1,22 +1,26 @@
-const Input = ({ object, setObject, title, label, placeholder, classes }) => {
-  // const handleInput = (e) => {
-  //   setObject({ ...object, [label]: e.target.value });
-  // };
+"use client";
+import { useState } from "react";
+
+const Input = ({ onSubmit, name, placeholder, type }) => {
+  const [value, setValue] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(value);
+  };
 
   return (
-    <div className={`flex items-center w-full ${classes}`}>
-      <h6 className="text-xs px-1 z-40 bg-code-black flex fixed ml-3 mt-[-2%]">
-        {title}
-      </h6>
-      <div className="w-full">
+    <div className={`flex items-center w-full text-white`}>
+      <p className="text-xs px-1 bg-code-black absolute ml-3 mb-[3%]">{name}</p>
+      <form onSubmit={handleSubmit}>
         <input
-          // value={object[label]}
+          name={name}
           placeholder={placeholder}
-          type="text"
-          className="outline border-white focus:outline focus: border-white rounded-md text-base bg-transparent py-2 px-3 w-full"
-          // onChange={handleInput}
+          type={type}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          className="outline border-white rounded-md text-base bg-transparent py-2 px-3"
         />
-      </div>
+      </form>
     </div>
   );
 };
