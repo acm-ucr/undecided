@@ -1,4 +1,5 @@
 import ProfileHeader from "@/components/profile/header";
+import Kanban from "@/components/profile/kanban/Kanban";
 
 const Page = () => {
   const profileInfo = {
@@ -9,12 +10,15 @@ const Page = () => {
   };
 
   return (
-    <ProfileHeader
-      name={profileInfo.name}
-      username={profileInfo.username}
-      email={profileInfo.email}
-      stars={profileInfo.stars}
-    />
+    <div>
+      <ProfileHeader
+        name={profileInfo.name}
+        username={profileInfo.username}
+        email={profileInfo.email}
+        stars={profileInfo.stars}
+      />
+      <Kanban />
+    </div>
   );
 };
 
