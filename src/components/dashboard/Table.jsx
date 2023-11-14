@@ -14,21 +14,20 @@ const Table = ({ headers, setHeaders, empty, objects, setObjects }) => {
         ))}
       </div>
       {objects.map((obj, index) => (
-        <div key={obj.id} className="text-code-white items-center">
-          <div
-            className={`${
-              index % 2 == 0 ? "bg-code-black" : "bg-code-darkgray"
-            } py-2 flex justify-evenly items-center w-full`}
-          >
-            {headers.map(
-              (header, key) =>
-                header.text !== "" && (
-                  <div key={key} className={`p-0 text-sm ${header.size}`}>
-                    {header.text === "status" ? <BsCircle /> : obj[header.text]}
-                  </div>
-                )
-            )}
-          </div>
+        <div
+          key={obj.id}
+          className={`${
+            index % 2 == 0 ? "bg-code-black" : "bg-code-darkgray"
+          } py-2 flex justify-evenly items-center w-full text-code-white`}
+        >
+          {headers.map(
+            (header, key) =>
+              header.text !== "" && (
+                <div key={key} className={`p-0 text-sm ${header.size}`}>
+                  {header.text === "status" ? <BsCircle /> : obj[header.text]}
+                </div>
+              )
+          )}
         </div>
       ))}
     </div>
