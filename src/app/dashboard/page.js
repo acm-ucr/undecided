@@ -6,28 +6,28 @@ const Page = () => {
   const problems = [
     {
       id: 0,
-      name: "Two Sum",
+      title: "Two Sum",
       status: "completed",
       topic: "Operations",
       difficulty: "easy",
     },
     {
       id: 1,
-      name: "Minutes to Hours",
+      title: "Minutes to Hours",
       status: "in-progress",
       topic: "Operations",
       difficulty: "medium",
     },
     {
       id: 2,
-      name: "Area of a Square",
+      title: "Area of a Square",
       status: "incomplete",
       topic: "Conditionals",
       difficulty: "hard",
     },
     {
       id: 3,
-      name: "Miles to Yards",
+      title: "Miles to Yards",
       status: "incomplete",
       topic: "Conditionals",
       difficulty: "hard",
@@ -35,10 +35,10 @@ const Page = () => {
   ];
 
   const header = [
-    { text: "Status" },
-    { text: "Title" },
-    { text: "Topic" },
-    { text: "Difficulty" },
+    { text: "status", size: "w-1/12" },
+    { text: "title", size: "w-1/12" },
+    { text: "topic", size: "w-1/12" },
+    { text: "difficulty", size: "w-1/12" },
   ];
 
   const [headers, setHeaders] = useState(header);

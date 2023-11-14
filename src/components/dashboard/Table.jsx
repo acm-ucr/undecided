@@ -7,25 +7,27 @@ const Table = ({ headers, setHeaders, empty, objects, setObjects }) => {
         {headers.map((header, index) => (
           <div
             key={index}
-            className="font-semibold text-code-white flex items-center p-0"
+            className={`font-semibold text-code-white flex items-center p-0 ${header.size}`}
           >
             {header.text}
           </div>
         ))}
       </div>
       {objects.map((obj, index) => (
-        <div key={obj.id} className="text-code-white">
+        <div key={obj.id} className="text-code-white items-center">
           <div
             className={`${
               index % 2 == 0 ? "bg-code-black" : "bg-code-darkgray"
-            } py-2 grid grid-cols-1 w-full`}
+            } py-2 flex justify-evenly items-center w-full`}
           >
-            <div className="m-0 p-0 flex justify-evenly items-center">
-              <BsCircle />
-              <div>{obj.name}</div>
-              <div>{obj.topic}</div>
-              <div>{obj.difficulty}</div>
-            </div>
+            {headers.map(
+              (header, key) =>
+                header.text !== "" && (
+                  <div key={key} className={`p-0 text-sm ${header.size}`}>
+                    {header.text === "status" ? <BsCircle /> : obj[header.text]}
+                  </div>
+                )
+            )}
           </div>
         </div>
       ))}
