@@ -12,7 +12,7 @@ const Problems = () => {
           <p>Solution</p>
           <p>Submission</p>
         </div>
-        <Description title="1. Two Sum" difficulty="Easy" />
+        <Description title="1. Two Sum" difficulty="Easy" date="Oct 02, 2023" />
       </div>
 
       {/* <Submission /> */}
