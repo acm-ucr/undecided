@@ -14,7 +14,7 @@ const Register = ({ name }) => {
           <Input
             name="Username"
             placeholder="Enter a username"
-            onSubmit={(val) => console.log(val)}
+            onSubmit={(value) => console.log(value)}
           />
         </div>
         <div className="h-[90%] my-auto">
