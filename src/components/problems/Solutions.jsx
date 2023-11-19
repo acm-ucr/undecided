@@ -5,23 +5,21 @@ import { PiCopySimple } from "react-icons/pi";
 import { useState } from "react";
 import Image from "next/image";
 
-const Solution = ({ title, date, language, stars, photo, code }) => {
+const Solution = ({ title, date, username, language, stars, photo, code }) => {
   const [star, setStar] = useState(false);
   return (
     <div>
       <FiArrowLeft className="text-2xl m-4 cursor-pointer" />
       <div className="px-5">
         <div className="flex items-center text-code-gray">
-          {
-            <Image
-              className="bg-code-white rounded-full border-2 mr-3"
-              width={36}
-              height={36}
-              src={photo}
-              alt="profile"
-            />
-          }
-          Apollo
+          <Image
+            className="bg-code-white rounded-full border-2 mr-3"
+            width={36}
+            height={36}
+            src={photo}
+            alt="profile"
+          />
+          {username}
         </div>
         <div className="text-xl mb-1 mt-2">{title}</div>
         <div className="text-code-gray mb-1">Posted {date}</div>
