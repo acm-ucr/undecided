@@ -8,7 +8,7 @@ import Image from "next/image";
 const Solution = ({ title, date, username, language, stars, photo, code }) => {
   const [star, setStar] = useState(false);
   return (
-    <div>
+    <>
       <FiArrowLeft className="text-2xl m-4 cursor-pointer" />
       <div className="px-5">
         <div className="flex items-center text-code-gray">
@@ -32,9 +32,9 @@ const Solution = ({ title, date, username, language, stars, photo, code }) => {
             <FaStar
               onClick={() => setStar(!star)}
               className={`ml-1 text-2xl inline cursor-pointer ${
-                !star
-                  ? `text-code-gray hover:text-code-lightorange`
-                  : `text-code-lightorange`
+                star
+                  ? `text-code-lightorange`
+                  : `text-code-gray hover:text-code-lightorange`
               }`}
             />
           </div>
@@ -50,7 +50,7 @@ const Solution = ({ title, date, username, language, stars, photo, code }) => {
           </pre>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
