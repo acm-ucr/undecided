@@ -36,9 +36,7 @@ const Table = ({ headers, setHeaders, empty, objects, setObjects }) => {
                       <BsCircle />
                     </div>
                   )}
-                  {header.text === "title" && (
-                    <p className="place-self-left">{obj[header.text]}</p>
-                  )}
+                  {header.text === "title" && <p>{obj[header.text]}</p>}
                   {header.text === "topic" && (
                     <div
                       className={`${
