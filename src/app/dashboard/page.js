@@ -7,52 +7,50 @@ const Page = () => {
     {
       id: 0,
       title: "Two Sum",
-      status: "completed",
-      topic: "Operations",
-      difficulty: "Easy",
+      status: 1,
+      topics: ["operations"],
+      difficulty: 1,
+      saved: true,
     },
     {
       id: 1,
       title: "Minutes to Hours",
-      status: "in-progress",
-      topic: "Operations",
-      difficulty: "Medium",
+      status: 0,
+      topics: ["operations"],
+      difficulty: 2,
+      saved: false,
     },
     {
       id: 2,
       title: "Area of a Square",
-      status: "incomplete",
-      topic: "Conditionals",
-      difficulty: "Hard",
+      status: -1,
+      topics: ["arrays"],
+      difficulty: 3,
+      saved: false,
     },
     {
       id: 3,
       title: "Miles to Yards",
-      status: "incomplete",
-      topic: "Conditionals",
-      difficulty: "Hard",
+      status: 1,
+      topics: ["conditionals"],
+      difficulty: 3,
+      saved: true,
     },
   ];
-
-  const header = [
-    { text: "status", size: "w-2/12" },
-    { text: "title", size: "w-4/12" },
-    { text: "topic", size: "w-5/12" },
-    { text: "difficulty", size: "w-4/12" },
-  ];
-
-  const [headers, setHeaders] = useState(header);
 
   const [objects, setObjects] = useState(problems);
 
   return (
-    <Table
-      objects={objects}
-      setObjects={setObjects}
-      empty="No Problems Found"
-      headers={headers}
-      setHeaders={setHeaders}
-    />
+    <div className="w-full flex justify-center items-center">
+      {
+        // ADD SEARCH AND FILTERS HERE
+      }
+      <Table
+        objects={objects}
+        setObjects={setObjects}
+        empty="No Problems Found"
+      />
+    </div>
   );
 };
 
