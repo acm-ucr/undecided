@@ -9,8 +9,8 @@ const Input = ({ onSubmit, name, placeholder, type }) => {
   };
 
   return (
-    <div className={`flex items-center w-full text-white`}>
-      <p className="text-xs px-1 bg-code-black absolute ml-3 mb-[3%]">{name}</p>
+    <div className="flex items-center w-full text-white">
+      <p className="text-xs px-1 bg-code-black absolute ml-3 mb-11">{name}</p>
       <form onSubmit={handleSubmit}>
         <input
           name={name}
