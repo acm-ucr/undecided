@@ -8,16 +8,15 @@ import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const noNavbarPagePaths = ["/register"];
-
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const showNavbar =
-    noNavbarPagePaths.filter((path) => path === pathname).length === 0;
+  const pathName = usePathname();
+
+  const navigation = RegExp(/dashboard/).test(pathName);
+
   return (
     <html lang="en">
       <body className={`${inter.className} bg-code-black`}>
-        {showNavbar && <Navigation />}
+        {navigation && <Navigation />}
         {children}
       </body>
     </html>
