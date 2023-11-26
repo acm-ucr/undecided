@@ -1,57 +1,108 @@
-"use client";
-import { FiArrowLeft } from "react-icons/fi";
-import { FaStar } from "react-icons/fa";
-import { PiCopySimple } from "react-icons/pi";
 import { useState } from "react";
-import Image from "next/image";
+import { FaStar, FaRegStar } from "react-icons/fa6";
+import Breakdown from "./Breakdown";
 
-const Solution = ({ title, date, username, language, stars, photo, code }) => {
-  const [star, setStar] = useState(false);
+const solutions = [
+  {
+    title: "2 Sum Super efficient",
+    date: new Date(),
+    language: "Python",
+    username: "poggers",
+    likes: 10,
+    code: "hello world",
+  },
+  {
+    title: "2 Sum Super slow",
+    date: new Date(),
+    language: "C++",
+    username: "vs code",
+    likes: 12,
+    code: "hello world",
+  },
+  {
+    title: "2 Sum Super nerdy",
+    date: new Date(),
+    language: "Javascript",
+    username: "google",
+    likes: 18,
+    code: "hello world",
+  },
+  {
+    title: "2 Sum Super efficient",
+    date: new Date(),
+    language: "Python",
+    username: "poggers",
+    likes: 10,
+    code: "hello world",
+  },
+];
+
+const Solution = () => {
+  const [like, setLike] = useState(false);
+  const [solution, setSolution] = useState(null);
+
+  const handleLike = (state) => {
+    setLike(state);
+  };
+
   return (
-    <>
-      <FiArrowLeft className="text-2xl m-4 cursor-pointer" />
-      <div className="px-5">
-        <div className="flex items-center text-code-gray">
-          <Image
-            className="bg-code-white rounded-full border-2 mr-3"
-            width={36}
-            height={36}
-            src={photo}
-            alt="profile"
-          />
-          {username}
-        </div>
-        <div className="text-xl mb-1 mt-2">{title}</div>
-        <div className="text-code-gray mb-1">Posted {date}</div>
-        <div className="flex justify-between">
-          <div className="rounded-full bg-code-black w-fit px-2 py-1 text-xs self-center">
-            {language}
-          </div>
-          <div className="flex items-center">
-            {stars}
-            <FaStar
-              onClick={() => setStar(!star)}
-              className={`ml-1 text-2xl inline cursor-pointer ${
-                star
-                  ? `text-code-lightorange`
-                  : `text-code-gray hover:text-code-lightorange`
-              }`}
-            />
-          </div>
-        </div>
-        <div className="text-2xl my-3">Code</div>
-        <div className="rounded-3xl bg-code-black p-4 relative">
-          <PiCopySimple className="absolute inline text-2xl text-code-gray hover:text-code-white hover:cursor-pointer top-0 right-0 m-3" />
-          <pre>
-            <code>
-              {code}
-              <br />
-            </code>
-          </pre>
-        </div>
-      </div>
-    </>
+    <div className="flex justify-center items-center flex-col">
+      {solution && (
+        <Breakdown
+          title={solution.title}
+          date={solution.date}
+          username={solution.username}
+          language={solution.language}
+          stars={solution.likes}
+          code={solution.code}
+          setSolution={setSolution}
+        />
+      )}
+      {!solution &&
+        solutions.map(
+          ({ title, date, language, username, likes, code }, index) => (
+            <div
+              key={index}
+              className="text-white bg-code-black rounded my-2 p-3 w-11/12 hover:cursor-pointer hover:opacity-80"
+              onClick={() =>
+                setSolution({
+                  title,
+                  date,
+                  language,
+                  username,
+                  likes,
+                  code,
+                })
+              }
+            >
+              <div className="flex justify-between items-center text-code-gray text-sm">
+                <span>{username}</span>
+                <span>{date.toDateString()}</span>
+              </div>
+              <div className="my-2">{title}</div>
+              <div className="flex justify-between items-center">
+                <div className="bg-code-darkgray px-2 py-1 w-fit rounded-full text-sm">
+                  {language}
+                </div>
+                <div className="flex items-center gap-2">
+                  {likes}{" "}
+                  {like ? (
+                    <FaStar
+                      onClick={() => handleLike(false)}
+                      className="hover:cursor-pointer"
+                    />
+                  ) : (
+                    <FaRegStar
+                      onClick={() => handleLike(true)}
+                      className="hover:cursor-pointer"
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          )
+        )}
+    </div>
   );
 };
-
 export default Solution;

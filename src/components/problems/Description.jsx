@@ -1,43 +1,67 @@
 "use client";
 import { useState } from "react";
-import { COLORS } from "@/data/Difficulty";
-import { TbBookmark, TbBookmarkFilled } from "react-icons/tb";
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import Tag from "../Tag";
+import { DIFFICULTIES, TOPICS } from "@/data/Table";
 
-// import { PROBLEMS} from "@/data/Problem"
+const Description = ({
+  title,
+  difficulty,
+  topics,
+  saved,
+  description,
+  examples,
+}) => {
+  const [save, setSave] = useState(saved);
 
-const Description = ({ title, difficulty, tags, description }) => {
-  const [isActive, setIsActive] = useState(false);
+  const handleSave = (state) => {
+    setSave(state);
+  };
 
   return (
-    <>
-      <div className="flex flex-row justify-between mx-4 text-2xl">
-        <div className="flex flex-row align-middle">
-          <p>{title}</p>
-          <div className={`${COLORS["Easy"]} text-sm my-auto mx-3`}>
-            {difficulty}
+    <div className="h-full p-4">
+      <div className="flex justify-between text-2xl">
+        <div className="flex items-center">
+          {title}
+          <div
+            className={`text-base my-2 mx-3 ${DIFFICULTIES[difficulty].color}`}
+          >
+            {DIFFICULTIES[difficulty].text}
           </div>
         </div>
+        {save ? (
+          <FaBookmark
+            onClick={() => handleSave(false)}
+            className="hover:cursor-pointer"
+          />
+        ) : (
+          <FaRegBookmark
+            onClick={() => handleSave(true)}
+            className="hover:cursor-pointer"
+          />
+        )}
+      </div>
 
-        <div onClick={() => setIsActive(!isActive)} className="cursor-pointer">
-          {isActive ? <TbBookmarkFilled /> : <TbBookmark />}
-        </div>
-      </div>
+      {topics.map((topic, index) => (
+        <Tag key={index} text={topic} color={TOPICS[topic]} />
+      ))}
+
+      <div className="my-3">{description}</div>
+
       <div>
-        <p className="mx-3 text-code-black text-sm rounded-full w-min mx-4 my-2 bg-code-lime">
-          Operations
-        </p>
-        <div className="mx-4 my-4">
-          {/* {PROBLEMS}.twoSum.objective */}
-          Write a program to sum two numbers. Print out the result using the
-          console.log() function. <br />
-          <p className="text-lg text-bold mt-4">Example 1:</p>
-          {/* {PROBLEMS}.twoSum.exampleInput
-              {PROBLEMS}.twoSum.exampleOutput */}
-          <p className="text-lg text-bold mt-4">Constraints:</p>
-          {/* {PROBLEMS}.twoSum.constraints */}
-        </div>
+        {examples.map(({ input, output, description }, index) => (
+          <div key={index} className="my-2">
+            Example
+            <br />
+            Input: <code>{input}</code>
+            <br />
+            Output: <code>{output}</code>
+            <br />
+            Explanation: <code>{description}</code>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 export default Description;
