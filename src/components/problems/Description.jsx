@@ -1,8 +1,13 @@
+"use client";
+import { useState } from "react";
 import { COLORS } from "@/data/Difficulty";
-import { TbBookmark } from "react-icons/tb";
+import { TbBookmark, TbBookmarkFilled } from "react-icons/tb";
+
 // import { PROBLEMS} from "@/data/Problem"
 
 const Description = ({ title, difficulty, tags, description }) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <>
       <div className="flex flex-row justify-between mx-4 text-2xl">
@@ -12,12 +17,15 @@ const Description = ({ title, difficulty, tags, description }) => {
             {difficulty}
           </div>
         </div>
-        <TbBookmark />
+
+        <div onClick={() => setIsActive(!isActive)} className="cursor-pointer">
+          {isActive ? <TbBookmarkFilled /> : <TbBookmark />}
+        </div>
       </div>
       <div>
-        <div className="rounded-full w-min mx-4 my-2 bg-code-lime">
-          <p className="mx-3 text-code-black text-sm">Operations</p>
-        </div>
+        <p className="mx-3 text-code-black text-sm rounded-full w-min mx-4 my-2 bg-code-lime">
+          Operations
+        </p>
         <div className="mx-4 my-4">
           {/* {PROBLEMS}.twoSum.objective */}
           Write a program to sum two numbers. Print out the result using the
