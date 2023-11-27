@@ -1,4 +1,4 @@
-import ProfileHeader from "@/components/profile/header";
+import ProfileHeader from "@/components/profile/Header";
 import Kanban from "@/components/profile/kanban/Kanban";
 
 const Page = () => {

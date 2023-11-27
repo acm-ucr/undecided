@@ -9,16 +9,16 @@ const Input = ({ onSubmit, name, placeholder, type }) => {
   };
 
   return (
-    <div className="flex items-center w-full text-white">
-      <p className="text-xs px-1 bg-code-black absolute ml-3 mb-11">{name}</p>
-      <form onSubmit={handleSubmit}>
+    <div className="flex items-center text-white w-full relative bg-inherit">
+      <p className="text-xs absolute px-1 ml-3 mb-11 bg-inherit">{name}</p>
+      <form onSubmit={handleSubmit} className="w-full">
         <input
           name={name}
           placeholder={placeholder}
           type={type}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="outline border-white rounded-md text-base bg-transparent py-2 px-3"
+          className="flex outline border-white rounded-md text-base bg-transparent py-2 px-3 w-full"
         />
       </form>
     </div>
