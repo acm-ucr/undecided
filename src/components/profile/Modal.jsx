@@ -50,13 +50,12 @@ const ProfileModal = ({ picture, setModal }) => {
             src={picture}
           />
         </div>
-        <div className="pt-5 flex w-full bg-inherit">
-          <Input name="First Name" />
-          <div className="px-3" />
-          <Input name="Last Name" />
-        </div>
-        <div className="pt-4 bg-inherit">
-          <Input name="Username" />
+        <div className="pt-5 flex flex-col w-full bg-inherit gap-4">
+          <div className="flex bg-inherit gap-4">
+            <Input name="First Name" background="bg-code-darkgray" />
+            <Input name="Last Name" background="bg-code-darkgray" />
+          </div>
+          <Input name="Username" background="bg-code-darkgray" />
         </div>
       </div>
     </div>

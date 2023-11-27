@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Link from "@/components/Link";
 
 const Landing = () => {
   return (
@@ -12,7 +12,7 @@ const Landing = () => {
         <span className="text-code-pink"> beginners </span> in computer science
         to practice their fundamentals!
       </div>
-      <Button text="Get Started" color="lime" link="/dashboard" />
+      <Link text="Get Started" color="lime" link="/dashboard" />
     </div>
   );
 };
