@@ -38,9 +38,12 @@ const TextEditor = () => {
       <div
         className={`${
           show ? "h-[47%]" : "h-[7%]"
-        } transition-height duration-500 ease-out-in flex justify-between items-center border-2 border-code-darkgray rounded-md mt-[3%] p-4 relative`}
+        } transition-height duration-500 ease-out-in flex flex-col ${
+          show ? "justify-between" : "justify-center"
+        } items-center border-2 border-code-darkgray rounded-md mt-[3%] relative p-2`}
       >
-        <div className="h-fit flex justify-between items-center w-full absolute bottom-1 left-0 px-4">
+        {show && <div>hello</div>}
+        <div className="h-fit flex justify-between items-center w-full px-4">
           <button
             className="flex items-center justify-center"
             onClick={handleConsole}

@@ -13,7 +13,7 @@ const Kanban = () => {
   ]);
 
   return (
-    <div className="p-8">
+    <div className="mt-10">
       <Filters
         difficulty={difficulty}
         setDifficulty={setDifficulty}

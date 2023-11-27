@@ -22,7 +22,7 @@ const Navigation = () => {
         <Nav className="brand pl-12">
           <Link
             className="pt-1 no-underline flex items-center text-code-white"
-            href="/problems"
+            href="/dashboard"
           >
             <p>Problems</p>
           </Link>

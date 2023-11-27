@@ -36,8 +36,8 @@ const ProfileHeader = () => {
         <div className="text-code-white text-xl">{username}</div>
         <div className="text-code-lightgray text-xs">{name}</div>
         <div className="text-code-lightgray text-xs">{email}</div>
-        <div className="flex flex-row mt-2.5 items-center space-x-0.5 space-y-0.5">
-          <FaStar className="text-code-lightorange text-2xl" />
+        <div className="flex flex-row mt-2.5 items-center">
+          <FaStar className="text-code-lightorange text-2xl mr-2" />
           <div className="text-code-lightgray text-xs">{stars}</div>
         </div>
       </div>
