@@ -17,7 +17,7 @@ const TextEditor = () => {
 
   return (
     <div className="w-1/2 h-full">
-      <div className="h-[85%] border-2 border-code-darkgray rounded-md">
+      <div className="h-[85%] border-2 border-code-darkgray rounded-md overflow-auto">
         <CodeMirror
           extensions={[python()]}
           value={code}
