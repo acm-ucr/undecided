@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   const pathName = usePathname();
 
-  const navigation = RegExp(/dashboard/).test(pathName);
+  const navigation = RegExp(/dashboard|profile/).test(pathName);
 
   return (
     <html lang="en">

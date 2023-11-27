@@ -23,7 +23,7 @@ const Account = ({ setState }) => {
             name="Username"
             placeholder="Enter a username"
             value={username}
-            setValue={setUsername}
+            setValue={(e) => setUsername(e.target.value)}
             background="bg-code-black"
           />
         </div>

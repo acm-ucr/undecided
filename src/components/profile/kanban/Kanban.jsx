@@ -13,7 +13,7 @@ const Kanban = () => {
   ]);
 
   return (
-    <div className="w-screen p-8">
+    <div className="p-8">
       <Filters
         difficulty={difficulty}
         setDifficulty={setDifficulty}

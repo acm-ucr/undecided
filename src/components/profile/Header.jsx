@@ -4,14 +4,23 @@ import Image from "next/image";
 import { RiSettings3Fill } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
-import ProfileModal from "./Modal";
+import Modal from "./Modal";
 
-const ProfileHeader = ({ picture, username, name, email, stars }) => {
+const ProfileHeader = () => {
+  const user = {
+    name: "Dummy McDumDum",
+    username: "dummy",
+    email: "email@ucr.edu",
+    stars: 0,
+  };
+
+  const { picture, username, name, email, stars } = user;
+
   const [modal, setModal] = useState(false);
 
   return (
     <div>
-      {modal && <ProfileModal picture={picture} setModal={setModal} />}
+      {modal && <Modal picture={picture} setModal={setModal} />}
       <div className="bg-code-darkgray rounded w-1/5 flex flex-col justify-center items-center relative font-semibold py-3.5">
         <div className="flex flex-row mb-1.5">
           <Image
@@ -20,8 +29,8 @@ const ProfileHeader = ({ picture, username, name, email, stars }) => {
             alt={name + "'s Profile Picture"}
           />
           <RiSettings3Fill
-            className="text-code-white text-xl absolute top-2.5 right-5"
-            onClick={() => setModal(!modal)}
+            className="text-code-white text-xl absolute top-3 right-3 hover:cursor-pointer hover:opacity-80"
+            onClick={() => setModal(true)}
           />
         </div>
         <div className="text-code-white text-xl">{username}</div>
