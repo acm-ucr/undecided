@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
+import Select from "../Select";
 import CodeMirror from "@uiw/react-codemirror";
 import { python } from "@codemirror/lang-python";
+import { cpp } from "@codemirror/lang-cpp";
+import { javascript } from "@codemirror/lang-javascript";
 import { atomone } from "@uiw/codemirror-theme-atomone";
 import { BiSolidDownArrow } from "react-icons/bi";
 
 const TextEditor = () => {
   const [code, setCode] = useState("");
   const [show, setShow] = useState(false);
+  const [language, setLanguage] = useState([python()]);
+  const [current, setCurrent] = useState("Python");
+
+  const languages = ["Python", "C++", "Javascript"];
 
   const handleRun = () => {
     console.log("RUN CODE");
@@ -21,6 +28,21 @@ const TextEditor = () => {
     setShow(!show);
   };
 
+  useEffect(() => {
+    switch (current) {
+      case "Python":
+        setLanguage([python()]);
+        break;
+      case "C++":
+        setLanguage([cpp()]);
+        break;
+      case "Javascript":
+        setLanguage([javascript()]);
+        break;
+    }
+    setCode("");
+  }, [current]);
+
   return (
     <div className="w-1/2 h-full">
       <div
@@ -28,8 +50,16 @@ const TextEditor = () => {
           show ? "h-[50%]" : "h-[90%]"
         } transition-height duration-500 ease-in-out border-2 border-code-darkgray rounded-md overflow-auto`}
       >
+        <div className="w-1/4 p-1.5">
+          <Select
+            options={languages}
+            placeholder={"No languages found"}
+            current={current}
+            setCurrent={setCurrent}
+          />
+        </div>
         <CodeMirror
-          extensions={[python()]}
+          extensions={language}
           value={code}
           onChange={(value) => setCode(value)}
           theme={atomone}
