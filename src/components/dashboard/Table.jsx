@@ -3,7 +3,7 @@ import Row from "./Row";
 const Table = ({ objects }) => {
   return (
     <div className="text-white w-11/12">
-      <div className="grid grid-cols-16">
+      <div className="grid grid-cols-16 border-b-2 border-code-darkgray pb-2">
         <div className="col-span-2 text-center">Status</div>
         <div className="col-span-6">Title</div>
         <div className="col-span-4">Topics</div>
