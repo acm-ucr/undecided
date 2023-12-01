@@ -10,7 +10,7 @@ const Search = ({ placeholder }) => {
   };
 
   return (
-    <div className={`m-[5%] flex flex-row rounded-xl border-2`}>
+    <div className={`flex flex-row rounded-xl border-2`}>
       <BiSearch className="mt-[10px] ml-3 text-lg text-code-white" />
       <form onSubmit={handleSubmit} className="w-full">
         <input

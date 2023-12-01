@@ -1,5 +1,6 @@
 "use client";
 import Table from "@/components/dashboard/Table";
+import FilterBar from "@/components/FilterBar";
 import { useState } from "react";
 
 const Page = () => {
@@ -41,10 +42,8 @@ const Page = () => {
   const [objects, setObjects] = useState(problems);
 
   return (
-    <div className="w-full flex justify-center items-center">
-      {
-        // ADD SEARCH AND FILTERS HERE
-      }
+    <div className="w-full flex flex-col justify-center items-center">
+      {<FilterBar />}
       <Table
         objects={objects}
         setObjects={setObjects}
