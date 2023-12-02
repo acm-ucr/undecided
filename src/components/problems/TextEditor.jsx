@@ -48,7 +48,7 @@ const TextEditor = () => {
       <div
         className={`${
           show ? "h-[50%]" : "h-[90%]"
-        } transition-height duration-500 ease-in-out border-2 border-code-darkgray rounded-md overflow-auto`}
+        } transition-height duration-500 ease-in-out border-2 border-code-darkgray rounded-md overflow-auto flex flex-col`}
       >
         <div className="w-1/4 p-1.5">
           <Select
@@ -58,12 +58,14 @@ const TextEditor = () => {
             setCurrent={setCurrent}
           />
         </div>
-        <CodeMirror
-          extensions={language}
-          value={code}
-          onChange={(value) => setCode(value)}
-          theme={atomone}
-        />
+        <div className="flex flex-col flex-1 bg-code-atomone">
+          <CodeMirror
+            extensions={language}
+            value={code}
+            onChange={(value) => setCode(value)}
+            theme={atomone}
+          />
+        </div>
       </div>
       <div
         className={`${
