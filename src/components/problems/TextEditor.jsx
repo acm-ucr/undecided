@@ -8,7 +8,7 @@ import { javascript } from "@codemirror/lang-javascript";
 import { atomone } from "@uiw/codemirror-theme-atomone";
 import { BiSolidDownArrow } from "react-icons/bi";
 
-const TextEditor = () => {
+const TextEditor = ({ submit, setSubmit }) => {
   const [code, setCode] = useState("");
   const [show, setShow] = useState(false);
   const [language, setLanguage] = useState([python()]);
@@ -22,6 +22,7 @@ const TextEditor = () => {
 
   const handleSubmit = () => {
     console.log("SUBMIT CODE");
+    setSubmit(!submit);
   };
 
   const handleConsole = () => {

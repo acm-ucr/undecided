@@ -3,6 +3,7 @@ import { useState } from "react";
 import TextEditor from "@/components/problems/TextEditor";
 import Description from "@/components/problems/Description";
 import Solutions from "@/components/problems/Solutions";
+import Splash from "@/components/Splash";
 
 const TABS = [
   {
@@ -42,8 +43,11 @@ const Data = {
 
 const Problem = () => {
   const [current, setCurrent] = useState(1);
+  const [submit, setSubmit] = useState(false);
 
-  return (
+  return submit ? (
+    <Splash />
+  ) : (
     <div className="w-11/12 flex justify-center text-white h-[90%] gap-4">
       <div className="w-1/2 rounded-md bg-code-darkgray overflow-scroll">
         <div className="flex text-sm border-b-2 border-code-gray sticky bg-code-darkgray top-0 z-1 pt-3">
@@ -64,7 +68,7 @@ const Problem = () => {
         {current === 2 && <Solutions />}
         {current === 3 && <div>SUBMISSION TAB GOES HERE</div>}
       </div>
-      <TextEditor />
+      <TextEditor submit={submit} setSubmit={setSubmit} />
     </div>
   );
 };
