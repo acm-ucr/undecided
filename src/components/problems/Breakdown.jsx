@@ -34,12 +34,12 @@ const Breakdown = ({
             {stars}
             {star ? (
               <FaStar
-                onClick={() => setStar(!star)}
+                onClick={() => setStar(false)}
                 className="ml-1 text-2xl cursor-pointer text-code-lightorange"
               />
             ) : (
               <FaRegStar
-                onClick={() => setStar(!star)}
+                onClick={() => setStar(true)}
                 className="ml-1 text-2xl cursor-pointer text-code-gray hover:text-code-lightorange"
               />
             )}
