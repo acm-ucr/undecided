@@ -21,7 +21,7 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
   return (
     <div
       className={`${
-        index % 2 === 0 && "bg-code-darkgray"
+        index % 2 !== 0 && "bg-code-darkgray"
       } grid grid-cols-16 items-center py-3 `}
     >
       <div className="col-span-2 flex justify-center">
