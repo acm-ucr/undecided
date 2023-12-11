@@ -39,6 +39,12 @@ const Select = ({ current, setCurrent, placeholder, options }) => {
       />
       <div className="p-1" />
       <Dropdown.Menu className="!bg-code-darkgray w-full pt-10">
+        <Dropdown.Item
+          className="hover:!bg-code-gray !bg-code-darkgray !text-code-white !flex !flex-row !justify-between !items-center"
+          onClick={() => setCurrent(placeholder)}
+        >
+          Clear
+        </Dropdown.Item>
         {options.map((option, index) => (
           <Dropdown.Item
             className="hover:!bg-code-gray !bg-code-darkgray !text-code-white !flex !flex-row !justify-between !items-center"
