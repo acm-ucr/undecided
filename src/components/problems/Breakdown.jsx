@@ -1,6 +1,6 @@
 "use client";
 import { FiArrowLeft } from "react-icons/fi";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
 import { PiCopySimple } from "react-icons/pi";
 import { useState } from "react";
 
@@ -32,14 +32,17 @@ const Breakdown = ({
           </div>
           <div className="flex items-center">
             {stars}
-            <FaStar
-              onClick={() => setStar(!star)}
-              className={`ml-1 text-2xl inline cursor-pointer ${
-                star
-                  ? `text-code-lightorange`
-                  : `text-code-gray hover:text-code-lightorange`
-              }`}
-            />
+            {star ? (
+              <FaStar
+                onClick={() => setStar(false)}
+                className="ml-1 text-2xl cursor-pointer text-code-lightorange"
+              />
+            ) : (
+              <FaRegStar
+                onClick={() => setStar(true)}
+                className="ml-1 text-2xl cursor-pointer text-code-gray hover:text-code-lightorange"
+              />
+            )}
           </div>
         </div>
         <div className="text-2xl my-3">Code</div>
