@@ -22,7 +22,7 @@ const TextEditor = ({ submit, setSubmit }) => {
 
   const handleSubmit = () => {
     console.log("SUBMIT CODE");
-    setSubmit(!submit);
+    setSubmit(2);
   };
 
   const handleConsole = () => {
