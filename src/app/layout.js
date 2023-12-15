@@ -16,7 +16,7 @@ const nunito = Nunito({
 export default function RootLayout({ children }) {
   const pathName = usePathname();
 
-  const navigation = RegExp(/dashboard|profile/).test(pathName);
+  const navigation = RegExp(/dashboard|profile|problems/).test(pathName);
 
   return (
     <html lang="en">

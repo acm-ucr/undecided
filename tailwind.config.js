@@ -32,6 +32,7 @@ module.exports = {
           orange: "#FABB01",
           lightorange: "#FAD32A",
           red: "#FF4B1E",
+          atomone: "#282C34",
         },
       },
     },
