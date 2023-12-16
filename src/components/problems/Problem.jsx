@@ -3,6 +3,7 @@ import { useState } from "react";
 import TextEditor from "@/components/problems/TextEditor";
 import Description from "@/components/problems/Description";
 import Solutions from "@/components/problems/Solutions";
+import Submission from "./Submission";
 
 const TABS = [
   {
@@ -62,7 +63,7 @@ const Problem = () => {
 
         {current === 1 && <Description {...Data} />}
         {current === 2 && <Solutions />}
-        {current === 3 && <div>SUBMISSION TAB GOES HERE</div>}
+        {current === 3 && <Submission />}
       </div>
       <TextEditor />
     </div>
