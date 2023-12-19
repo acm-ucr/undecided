@@ -10,8 +10,8 @@ const Search = ({ placeholder }) => {
   };
 
   return (
-    <div className={`flex flex-row rounded-xl border-2`}>
-      <BiSearch className="mt-[10px] ml-3 text-lg text-code-white" />
+    <div className="flex items-center rounded-xl border-2 w-full">
+      <BiSearch className="mx-3 text-lg text-code-white" />
       <form onSubmit={handleSubmit} className="w-full">
         <input
           name="search"
@@ -19,7 +19,7 @@ const Search = ({ placeholder }) => {
           placeholder={placeholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="p-[6px] bg-transparent placeholder:text-code-white text-code-white rounded-xl focus:outline-none w-full"
+          className="bg-transparent placeholder:text-code-white text-code-white focus:outline-none w-full"
         />
       </form>
     </div>
