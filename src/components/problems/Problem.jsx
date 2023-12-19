@@ -4,6 +4,7 @@ import TextEditor from "@/components/problems/TextEditor";
 import Description from "@/components/problems/Description";
 import Solutions from "@/components/problems/Solutions";
 import Splash from "@/components/Splash";
+import Submission from "./Submission";
 
 const TABS = [
   {
@@ -46,31 +47,28 @@ const Problem = () => {
   const [submit, setSubmit] = useState(false);
 
   return (
-    <>
-      <div className="w-11/12 flex justify-center text-white h-[90%] gap-4">
-        <div className="w-1/2 rounded-md bg-code-darkgray overflow-scroll">
-          <div className="flex text-sm border-b-2 border-code-gray sticky bg-code-darkgray top-0 z-1 pt-3">
-            {TABS.map(({ title, value }, index) => (
-              <p
-                key={index}
-                onClick={() => setCurrent(value)}
-                className={`${
-                  current === value ? "font-bold" : ""
-                } cursor-pointer text-lg ml-5`}
-              >
-                {title}
-              </p>
-            ))}
-          </div>
-
-          {current === 1 && <Description {...Data} />}
-          {current === 2 && <Solutions />}
-          {current === 3 && <div>SUBMISSION TAB GOES HERE</div>}
+    <div className="w-11/12 flex justify-center text-white h-[90%] gap-4">
+      <div className="w-1/2 rounded-md bg-code-darkgray overflow-scroll">
+        <div className="flex text-sm border-b-2 border-code-gray sticky bg-code-darkgray top-0 z-1 pt-3">
+          {TABS.map(({ title, value }, index) => (
+            <p
+              key={index}
+              onClick={() => setCurrent(value)}
+              className={`${
+                current === value ? "font-bold" : ""
+              } cursor-pointer text-lg ml-5`}
+            >
+              {title}
+            </p>
+          ))}
         </div>
-        <TextEditor submit={submit} setSubmit={setSubmit} />
+        {current === 1 && <Description {...Data} />}
+        {current === 2 && <Solutions />}
+        {current === 3 && <Submission />}
       </div>
+      <TextEditor submit={submit} setSubmit={setSubmit} />
       {submit && <Splash />}
-    </>
+    </div>
   );
 };
 
