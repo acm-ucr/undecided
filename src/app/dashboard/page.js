@@ -41,10 +41,7 @@ const Page = () => {
   const [objects, setObjects] = useState(problems);
 
   return (
-    <div className="w-full flex justify-center items-center">
-      {
-        // ADD SEARCH AND FILTERS HERE
-      }
+    <div className="w-full flex flex-col justify-center items-center">
       <Table
         objects={objects}
         setObjects={setObjects}

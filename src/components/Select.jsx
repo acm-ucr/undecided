@@ -25,29 +25,23 @@ const Select = ({ current, setCurrent, placeholder, options }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <Dropdown
-      show={show}
-      className="w-full m-0"
-      onToggle={() => setShow(!show)}
-      autoClose={true}
-    >
+    <Dropdown show={show} onToggle={() => setShow(!show)} autoClose={true}>
       <Dropdown.Toggle
         show={show}
         current={current}
         placeholder={placeholder}
         as={Toggle}
       />
-      <div className="p-1" />
-      <Dropdown.Menu className="!bg-code-darkgray w-full pt-10">
+      <Dropdown.Menu className="!bg-code-darkgray mt-2">
         <Dropdown.Item
-          className="hover:!bg-code-gray !bg-code-darkgray !text-code-white !flex !flex-row !justify-between !items-center"
+          className="hover:!bg-code-gray !text-code-white !flex !items-center"
           onClick={() => setCurrent(placeholder)}
         >
           Clear
         </Dropdown.Item>
         {options.map((option, index) => (
           <Dropdown.Item
-            className="hover:!bg-code-gray !bg-code-darkgray !text-code-white !flex !flex-row !justify-between !items-center"
+            className="hover:!bg-code-gray !text-code-white !flex !items-center"
             key={index}
             onClick={() => setCurrent(option)}
           >
