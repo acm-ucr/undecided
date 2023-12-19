@@ -7,14 +7,14 @@ import Nav from "react-bootstrap/Nav";
 const Navigation = () => {
   return (
     <div className="w-full flex justify-center">
-      <Navbar className="flex pt-3 w-11/12">
+      <Navbar className="flex py-3 w-11/12 my-auto">
         <Nav className="brand">
           <Link
             className="flex no-underline items-center gap-2"
             href="/register"
           >
             <RxCross1 className=" text-2xl text-code-black bg-code-white" />
-            <p className="text-2xl pl-3 text-code-white font-semibold">
+            <p className="text-2xl pl-3 text-code-white font-semibold mb-0">
               Apollo
             </p>
           </Link>
@@ -24,7 +24,7 @@ const Navigation = () => {
             className="pt-1 no-underline flex items-center text-code-white"
             href="/dashboard"
           >
-            <p>Problems</p>
+            <p className="pl-10 mb-0">Problems</p>
           </Link>
         </Nav>
         <Nav className="brand pl-12 w-full justify-end">

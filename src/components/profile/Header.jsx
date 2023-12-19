@@ -21,7 +21,7 @@ const ProfileHeader = () => {
   return (
     <div>
       {modal && <Modal picture={picture} setModal={setModal} />}
-      <div className="bg-code-darkgray rounded w-1/5 flex flex-col justify-center items-center relative font-semibold py-3.5">
+      <div className="bg-code-darkgray rounded w-1/4 flex flex-col justify-center items-center relative font-semibold py-5">
         <div className="flex flex-row mb-1.5">
           <Image
             className="bg-code-white rounded-full w-20 h-20"
@@ -29,16 +29,16 @@ const ProfileHeader = () => {
             alt={name + "'s Profile Picture"}
           />
           <RiSettings3Fill
-            className="text-code-white text-xl absolute top-3 right-3 hover:cursor-pointer hover:opacity-80"
+            className="text-code-white text-2xl absolute top-3 right-3 hover:cursor-pointer hover:opacity-80"
             onClick={() => setModal(true)}
           />
         </div>
-        <div className="text-code-white text-xl">{username}</div>
-        <div className="text-code-lightgray text-xs">{name}</div>
-        <div className="text-code-lightgray text-xs">{email}</div>
+        <div className="text-code-white text-2xl">{username}</div>
+        <div className="text-code-lightgray text-sm">{name}</div>
+        <div className="text-code-lightgray text-sm">{email}</div>
         <div className="flex flex-row mt-2.5 items-center">
           <FaStar className="text-code-lightorange text-2xl mr-2" />
-          <div className="text-code-lightgray text-xs">{stars}</div>
+          <div className="text-code-lightgray text-md">{stars}</div>
         </div>
       </div>
     </div>
