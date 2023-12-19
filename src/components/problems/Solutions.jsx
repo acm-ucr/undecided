@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaStar, FaRegStar } from "react-icons/fa6";
+import Card from "./Card";
 import Breakdown from "./Breakdown";
 
 const solutions = [
@@ -38,12 +38,7 @@ const solutions = [
 ];
 
 const Solution = () => {
-  const [like, setLike] = useState(false);
   const [solution, setSolution] = useState(null);
-
-  const handleLike = (state) => {
-    setLike(state);
-  };
 
   return (
     <div className="flex justify-center items-center flex-col">
@@ -55,53 +50,22 @@ const Solution = () => {
           language={solution.language}
           stars={solution.likes}
           code={solution.code}
-          setSolution={setSolution}
+          setState={setSolution}
         />
       )}
       {!solution &&
-        solutions.map(
-          ({ title, date, language, username, likes, code }, index) => (
-            <div
-              key={index}
-              className="text-white bg-code-black rounded my-2 p-3 w-11/12 hover:cursor-pointer hover:opacity-80"
-              onClick={() =>
-                setSolution({
-                  title,
-                  date,
-                  language,
-                  username,
-                  likes,
-                  code,
-                })
-              }
-            >
-              <div className="flex justify-between items-center text-code-gray text-sm">
-                <span>{username}</span>
-                <span>{date.toDateString()}</span>
-              </div>
-              <div className="my-2">{title}</div>
-              <div className="flex justify-between items-center">
-                <div className="bg-code-darkgray px-2 py-1 w-fit rounded-full text-sm">
-                  {language}
-                </div>
-                <div className="flex items-center gap-2">
-                  {likes}{" "}
-                  {like ? (
-                    <FaStar
-                      onClick={() => handleLike(false)}
-                      className="hover:cursor-pointer"
-                    />
-                  ) : (
-                    <FaRegStar
-                      onClick={() => handleLike(true)}
-                      className="hover:cursor-pointer"
-                    />
-                  )}
-                </div>
-              </div>
-            </div>
-          )
-        )}
+        solutions.map((obj, index) => (
+          <Card
+            key={index}
+            title={obj.title}
+            date={obj.date}
+            language={obj.language}
+            username={obj.username}
+            likes={obj.likes}
+            code={obj.code}
+            setState={setSolution}
+          />
+        ))}
     </div>
   );
 };
