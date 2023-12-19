@@ -3,6 +3,7 @@ import { useState } from "react";
 import TextEditor from "@/components/problems/TextEditor";
 import Description from "@/components/problems/Description";
 import Solutions from "@/components/problems/Solutions";
+import Splash from "@/components/Splash";
 import Submission from "./Submission";
 
 const TABS = [
@@ -43,6 +44,7 @@ const Data = {
 
 const Problem = () => {
   const [current, setCurrent] = useState(1);
+  const [submit, setSubmit] = useState(false);
 
   return (
     <div className="w-11/12 flex justify-center text-white h-[90%] gap-4">
@@ -60,12 +62,12 @@ const Problem = () => {
             </p>
           ))}
         </div>
-
         {current === 1 && <Description {...Data} />}
         {current === 2 && <Solutions />}
         {current === 3 && <Submission />}
       </div>
-      <TextEditor />
+      <TextEditor submit={submit} setSubmit={setSubmit} />
+      {submit && <Splash />}
     </div>
   );
 };
