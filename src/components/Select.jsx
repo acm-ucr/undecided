@@ -1,6 +1,6 @@
 "use client";
 
-import { BiSolidUpArrow } from "react-icons/bi";
+import { BiSolidDownArrow } from "react-icons/bi";
 import { BsDot } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
@@ -12,7 +12,7 @@ const Toggle = ({ onClick, show, current, placeholder }) => {
       className="bg-code-darkgray text-code-white w-full py-2 rounded-lg flex items-center justify-between px-3"
     >
       {current || placeholder}
-      <BiSolidUpArrow
+      <BiSolidDownArrow
         className={`${
           show && "rotate-180"
         } duration-300 text-code-white text-xs`}
