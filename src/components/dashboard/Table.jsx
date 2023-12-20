@@ -14,7 +14,7 @@ const Table = ({ objects }) => {
 
   return (
     <div className="text-white w-11/12">
-      <div className="flex my-3">
+      <div className="flex my-3 gap-1">
         <Search placeholder="Search" />
 
         <div className="grid grid-cols-3 gap-1 w-1/2">
