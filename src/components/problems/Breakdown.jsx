@@ -2,6 +2,7 @@
 import { FiArrowLeft } from "react-icons/fi";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { PiCopySimple } from "react-icons/pi";
+import toast from "react-hot-toast";
 import { useState } from "react";
 
 const Breakdown = ({
@@ -16,6 +17,11 @@ const Breakdown = ({
   setState,
 }) => {
   const [star, setStar] = useState(false);
+  const HandleCopy = () => {
+    navigator.clipboard.writeText(code);
+    console.log("copied");
+    toast("✅ Successfully copied to clipboard!");
+  };
   return (
     <div className="w-full">
       <FiArrowLeft
@@ -60,7 +66,10 @@ const Breakdown = ({
         </div>
         <div className="text-2xl my-3">Code</div>
         <div className="rounded-3xl bg-code-black p-4 relative">
-          <PiCopySimple className="absolute inline text-2xl text-code-gray hover:text-code-white hover:cursor-pointer top-0 right-0 m-3" />
+          <PiCopySimple
+            className="absolute inline text-2xl text-code-gray hover:text-code-white hover:cursor-pointer top-0 right-0 m-3"
+            onClick={HandleCopy}
+          />
           <pre>
             <code>{code}</code>
           </pre>
