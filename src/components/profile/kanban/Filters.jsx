@@ -17,12 +17,14 @@ const Filters = ({
           setCurrent={setDifficulty}
           placeholder="Difficulty"
           options={difficulties}
+          clear={true}
         />
         <Select
           current={topic}
           setCurrent={setTopic}
           placeholder="Topic"
           options={topics}
+          clear={true}
         />
       </div>
     </div>

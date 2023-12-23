@@ -57,6 +57,7 @@ const TextEditor = ({ submit, setSubmit }) => {
             placeholder={"No languages found"}
             current={current}
             setCurrent={setCurrent}
+            clear={false}
           />
         </div>
         <div className="flex flex-col flex-1 bg-code-atomone">
