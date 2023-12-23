@@ -4,9 +4,13 @@ import Input from "../Input";
 import { useRef, useState } from "react";
 import { HiPencil } from "react-icons/hi";
 
-const Modal = ({ picture, setModal }) => {
+const Modal = ({ picture, setModal, firstName, lastName, userName }) => {
   const [hover, setHover] = useState(true);
-  const [info, setInfo] = useState();
+  const [info, setInfo] = useState({
+    first: firstName,
+    last: lastName,
+    username: userName,
+  });
   const [file, setFile] = useState(null);
   const fileRef = useRef(null);
 
@@ -74,17 +78,20 @@ const Modal = ({ picture, setModal }) => {
             <Input
               name="First Name"
               background="bg-code-darkgray"
+              value={info.first}
               onChange={(e) => setInfo({ ...info, first: e.target.value })}
             />
             <Input
               name="Last Name"
               background="bg-code-darkgray"
+              value={info.last}
               onChange={(e) => setInfo({ ...info, last: e.target.value })}
             />
           </div>
           <Input
             name="Username"
             background="bg-code-darkgray"
+            value={info.username}
             onChange={(e) => setInfo({ ...info, username: e.target.value })}
           />
         </div>
