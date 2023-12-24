@@ -1,6 +1,5 @@
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { PiCopySimpleLight } from "react-icons/pi";
-import handleCopy from "@/utils/Clipboard";
 import { useState } from "react";
 
 const SolutionCode = ({ code }) => {
@@ -10,10 +9,7 @@ const SolutionCode = ({ code }) => {
       <div className="w-full h-20 rounded-2xl bg-code-darkgray mt-3 flex flex-row">
         <p className="p-3 basis-11/12">{code}</p>
         <div className="mt-2 basis-1/12 flex justify-end mr-3">
-          <PiCopySimpleLight
-            onClick={() => handleCopy(code)}
-            className="text-2xl"
-          />
+          <PiCopySimpleLight className="text-2xl" />
         </div>
       </div>
     </div>
