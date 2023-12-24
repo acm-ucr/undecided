@@ -21,7 +21,13 @@ const Toggle = ({ onClick, show, current, placeholder }) => {
   );
 };
 
-const Select = ({ current, setCurrent, placeholder, options, clear }) => {
+const Select = ({
+  current,
+  setCurrent,
+  placeholder,
+  options,
+  clear = true,
+}) => {
   const [show, setShow] = useState(false);
 
   return (
