@@ -1,6 +1,6 @@
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { PiCopySimpleLight } from "react-icons/pi";
-import { handleCopy } from "@/utils/Clipboard";
+import handleCopy from "@/utils/Clipboard";
 import { useState } from "react";
 
 const SolutionCode = ({ code }) => {

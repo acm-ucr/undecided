@@ -2,7 +2,7 @@
 import { FiArrowLeft } from "react-icons/fi";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { PiCopySimple } from "react-icons/pi";
-import { handleCopy } from "@/utils/Clipboard";
+import handleCopy from "@/utils/Clipboard";
 import { useState } from "react";
 
 const Breakdown = ({

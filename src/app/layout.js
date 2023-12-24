@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Nunito } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import { usePathname } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${nunito.className} bg-code-black h-screen`}>
         {navigation && <Navigation />}
+        <Toaster />
         {children}
       </body>
     </html>
