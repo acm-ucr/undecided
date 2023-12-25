@@ -16,6 +16,7 @@ const Search = ({ placeholder }) => {
         <input
           name="search"
           type="text"
+          maxLength="100"
           placeholder={placeholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
