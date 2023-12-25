@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { FaPlus } from "react-icons/fa";
 import { BsStarFill } from "react-icons/bs";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-const Splash = ({ runs, points }) => {
+const Splash = ({ runs, points, submit, setSubmit }) => {
   return (
-    <div className="flex flex-col w-full h-screen bg-code-darkgray">
+    <div className="flex flex-col w-full h-screen bg-code-darkgray fixed top-0">
+      <div className="flex justify-end items-end m-4">
+        <AiFillCloseCircle
+          className="text-code-white text-4xl cursor-pointer"
+          onClick={() => setSubmit(!submit)}
+        />
+      </div>
       <div className="flex relative w-full h-1/3 justify-center items-end">
         <FaPlus className="text-code-white w-20 h-20 mt-3" />
         <div className="flex relative ml-5">
@@ -25,7 +32,7 @@ const Splash = ({ runs, points }) => {
       <div className="flex flex-col space-y-3 w-full h-1/4 items-center justify-center">
         <Link
           href="/profile"
-          className="bg-code-lime rounded-full w-1/4 text-center py-2 no-underline"
+          className="bg-code-lime text-code-black rounded-full w-1/4 text-center py-2 no-underline"
         >
           My Stars
         </Link>

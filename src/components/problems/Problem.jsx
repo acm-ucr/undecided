@@ -47,9 +47,9 @@ const Problem = () => {
   const [submit, setSubmit] = useState(false);
 
   return (
-    <div className="w-11/12 flex justify-center text-white h-[90%] gap-4">
+    <>
       {!submit && (
-        <>
+        <div className="w-11/12 flex justify-center text-white h-[90%] gap-4">
           <div className="w-1/2 rounded-md bg-code-darkgray overflow-scroll">
             <div className="flex text-sm border-b-2 border-code-gray sticky bg-code-darkgray top-0 z-1 pt-3">
               {TABS.map(({ title, value }, index) => (
@@ -69,11 +69,10 @@ const Problem = () => {
             {current === 3 && <Submission />}
           </div>
           <TextEditor submit={submit} setSubmit={setSubmit} />
-        </>
+        </div>
       )}
-
-      {submit && <Splash />}
-    </div>
+      {submit && <Splash submit={submit} setSubmit={setSubmit} />}
+    </>
   );
 };
 
