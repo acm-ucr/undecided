@@ -24,7 +24,7 @@ const Navigation = () => {
             className="pt-1 no-underline flex items-center text-code-white"
             href="/dashboard"
           >
-            <p className="pl-10 mb-0">Problems</p>
+            <p className="pl-10 mb-0 hover:text-code-lightgray">Problems</p>
           </Link>
         </Nav>
         <Nav className="brand pl-12 w-full justify-end">
