@@ -21,7 +21,13 @@ const Toggle = ({ onClick, show, current, placeholder }) => {
   );
 };
 
-const Select = ({ current, setCurrent, placeholder, options }) => {
+const Select = ({
+  current,
+  setCurrent,
+  placeholder,
+  options,
+  clear = true,
+}) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -33,12 +39,14 @@ const Select = ({ current, setCurrent, placeholder, options }) => {
         as={Toggle}
       />
       <Dropdown.Menu className="!bg-code-darkgray mt-2">
-        <Dropdown.Item
-          className="hover:!bg-code-gray !text-code-white !flex !items-center"
-          onClick={() => setCurrent(placeholder)}
-        >
-          Clear
-        </Dropdown.Item>
+        {clear && (
+          <Dropdown.Item
+            className="hover:!bg-code-gray !text-code-white !flex !items-center"
+            onClick={() => setCurrent(placeholder)}
+          >
+            Clear
+          </Dropdown.Item>
+        )}
         {options.map((option, index) => (
           <Dropdown.Item
             className="hover:!bg-code-gray !text-code-white !flex !items-center"
