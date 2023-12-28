@@ -78,12 +78,14 @@ const Modal = ({ picture, setModal, firstName, lastName, userName }) => {
             <Input
               name="First Name"
               background="bg-code-darkgray"
+              placeholder="First Name"
               value={info.first}
               onChange={(e) => setInfo({ ...info, first: e.target.value })}
             />
             <Input
               name="Last Name"
               background="bg-code-darkgray"
+              placeholder="Last Name"
               value={info.last}
               onChange={(e) => setInfo({ ...info, last: e.target.value })}
             />
@@ -91,6 +93,7 @@ const Modal = ({ picture, setModal, firstName, lastName, userName }) => {
           <Input
             name="Username"
             background="bg-code-darkgray"
+            placeholder="Username"
             value={info.username}
             onChange={(e) => setInfo({ ...info, username: e.target.value })}
           />
