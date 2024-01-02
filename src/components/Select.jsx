@@ -1,6 +1,6 @@
 "use client";
 
-import { BiSolidUpArrow } from "react-icons/bi";
+import { BiSolidDownArrow } from "react-icons/bi";
 import { BsDot } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
@@ -9,10 +9,10 @@ const Toggle = ({ onClick, show, current, placeholder }) => {
   return (
     <button
       onClick={onClick}
-      className="bg-code-darkgray text-code-white w-full py-2 rounded-lg flex items-center justify-between px-3"
+      className="bg-code-darkgray text-code-white w-full py-2 rounded-lg flex items-center justify-between px-3 hover:bg-code-lightgray"
     >
       {current || placeholder}
-      <BiSolidUpArrow
+      <BiSolidDownArrow
         className={`${
           show && "rotate-180"
         } duration-300 text-code-white text-xs`}
@@ -21,7 +21,13 @@ const Toggle = ({ onClick, show, current, placeholder }) => {
   );
 };
 
-const Select = ({ current, setCurrent, placeholder, options }) => {
+const Select = ({
+  current,
+  setCurrent,
+  placeholder,
+  options,
+  clear = true,
+}) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -33,12 +39,14 @@ const Select = ({ current, setCurrent, placeholder, options }) => {
         as={Toggle}
       />
       <Dropdown.Menu className="!bg-code-darkgray mt-2">
-        <Dropdown.Item
-          className="hover:!bg-code-gray !text-code-white !flex !items-center"
-          onClick={() => setCurrent(placeholder)}
-        >
-          Clear
-        </Dropdown.Item>
+        {clear && (
+          <Dropdown.Item
+            className="hover:!bg-code-gray !text-code-white !flex !items-center"
+            onClick={() => setCurrent(placeholder)}
+          >
+            Clear
+          </Dropdown.Item>
+        )}
         {options.map((option, index) => (
           <Dropdown.Item
             className="hover:!bg-code-gray !text-code-white !flex !items-center"

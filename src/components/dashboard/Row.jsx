@@ -11,6 +11,7 @@ import Link from "next/link";
 
 const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
   const [save, setSave] = useState(saved);
+  const [hovered, setHovered] = useState(false);
 
   const handleSave = (saved) => {
     setSave(saved);
@@ -20,8 +21,8 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
 
   return (
     <div
-      className={`${
-        index % 2 !== 0 && "bg-code-darkgray"
+      className={`${index % 2 !== 0 && "bg-code-darkgray"} ${
+        hovered && "opacity-50"
       } grid grid-cols-16 items-center py-3 `}
     >
       <div className="col-span-2 flex justify-center">
@@ -36,7 +37,9 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
       <Link
         href={`/problems/${id}`}
         target="_blank"
-        className="col-span-6 text-white no-underline"
+        className={`col-span-6 text-white no-underline`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
         {title}
       </Link>
@@ -51,17 +54,19 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
         {DIFFICULTIES[difficulty].text}
       </div>
       <div className="col-span-2 flex justify-center">
-        {save ? (
-          <FaBookmark
-            onClick={() => handleSave(false)}
-            className="hover:cursor-pointer"
-          />
-        ) : (
-          <FaRegBookmark
-            onClick={() => handleSave(true)}
-            className="hover:cursor-pointer"
-          />
-        )}
+        <div className="hover:bg-code-gray p-1 rounded-full">
+          {save ? (
+            <FaBookmark
+              onClick={() => handleSave(false)}
+              className="hover:cursor-pointer"
+            />
+          ) : (
+            <FaRegBookmark
+              onClick={() => handleSave(true)}
+              className="hover:cursor-pointer"
+            />
+          )}
+        </div>
       </div>
     </div>
   );

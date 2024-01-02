@@ -3,6 +3,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nunito } from "next/font/google";
 import Session from "@/components/Session";
+import { Toaster } from "react-hot-toast";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ export default function RootLayout({ children, session }) {
     <html lang="en">
       <body className={`${nunito.className} bg-code-black h-screen`}>
         <Session session={session}>{children}</Session>
+        <Toaster />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 "use client";
 import { FiArrowLeft } from "react-icons/fi";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import { PiCopySimple } from "react-icons/pi";
+import CopyButton from "@/components/CopyButton";
 import { useState } from "react";
 
 const Breakdown = ({
@@ -60,7 +60,7 @@ const Breakdown = ({
         </div>
         <div className="text-2xl my-3">Code</div>
         <div className="rounded-3xl bg-code-black p-4 relative">
-          <PiCopySimple className="absolute inline text-2xl text-code-gray hover:text-code-white hover:cursor-pointer top-0 right-0 m-3" />
+          <CopyButton messageToCopy={code} />
           <pre>
             <code>{code}</code>
           </pre>
