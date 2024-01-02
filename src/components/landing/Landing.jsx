@@ -1,4 +1,6 @@
+"use client";
 import Link from "@/components/Link";
+import { signIn } from "next-auth/react";
 
 const Landing = () => {
   return (
@@ -13,6 +15,16 @@ const Landing = () => {
         to practice their fundamentals!
       </div>
       <Link text="Get Started" color="lime" link="/dashboard" />
+      <button
+        className="text-white"
+        onClick={() => {
+          console.log("yipee");
+          signIn("google");
+          console.log("clicked");
+        }}
+      >
+        CLICK ME
+      </button>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import Profile from "@/components/profile/Profile";
+import Protected from "@/components/Protected";
 
 const Page = () => {
   return (
-    <div>
+    <Protected>
       <Profile />
-    </div>
+    </Protected>
   );
 };
 

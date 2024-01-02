@@ -7,6 +7,7 @@ import { cpp } from "@codemirror/lang-cpp";
 import { javascript } from "@codemirror/lang-javascript";
 import { atomone } from "@uiw/codemirror-theme-atomone";
 import { BiSolidDownArrow } from "react-icons/bi";
+import axios from "axios";
 
 const TextEditor = ({ submit, setSubmit }) => {
   const [code, setCode] = useState("");
@@ -21,8 +22,11 @@ const TextEditor = ({ submit, setSubmit }) => {
   };
 
   const handleSubmit = () => {
-    console.log("SUBMIT CODE");
-    setSubmit(true);
+    axios.post("/api/execute", {
+      code,
+      language: 71,
+    });
+    // setSubmit(true);
   };
 
   const handleConsole = () => {

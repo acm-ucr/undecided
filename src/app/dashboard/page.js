@@ -1,4 +1,5 @@
 "use client";
+import Protected from "@/components/Protected";
 import Table from "@/components/dashboard/Table";
 import { useState } from "react";
 
@@ -41,13 +42,15 @@ const Page = () => {
   const [objects, setObjects] = useState(problems);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <Table
-        objects={objects}
-        setObjects={setObjects}
-        empty="No Problems Found"
-      />
-    </div>
+    <Protected>
+      <div className="w-full flex flex-col justify-center items-center">
+        <Table
+          objects={objects}
+          setObjects={setObjects}
+          empty="No Problems Found"
+        />
+      </div>
+    </Protected>
   );
 };
 

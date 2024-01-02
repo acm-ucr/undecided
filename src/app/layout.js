@@ -1,10 +1,8 @@
-"use client";
 /* eslint-disable new-cap */
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nunito } from "next/font/google";
-import Navigation from "@/components/Navigation";
-import { usePathname } from "next/navigation";
+import Session from "@/components/Session";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -13,16 +11,11 @@ const nunito = Nunito({
   variable: "--font-nunito",
 });
 
-export default function RootLayout({ children }) {
-  const pathName = usePathname();
-
-  const navigation = RegExp(/dashboard|profile|problems/).test(pathName);
-
+export default function RootLayout({ children, session }) {
   return (
     <html lang="en">
       <body className={`${nunito.className} bg-code-black h-screen`}>
-        {navigation && <Navigation />}
-        {children}
+        <Session session={session}>{children}</Session>
       </body>
     </html>
   );
