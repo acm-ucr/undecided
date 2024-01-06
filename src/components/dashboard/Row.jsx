@@ -1,23 +1,22 @@
-import {
-  FaRegBookmark,
-  FaBookmark,
-  // FaCircleHalfStroke,
-  // FaCircle,
-} from "react-icons/fa6";
+import // FaRegBookmark,
+// FaBookmark,
+// FaCircleHalfStroke,
+// FaCircle,
+"react-icons/fa6";
 import Tag from "../Tag";
 import { DIFFICULTIES, TOPICS } from "@/data/Table";
 import { useState } from "react";
 import Link from "next/link";
 
 const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
-  const [save, setSave] = useState(saved);
+  // const [save, setSave] = useState(saved);
   const [hovered, setHovered] = useState(false);
 
-  const handleSave = (saved) => {
-    setSave(saved);
+  // const handleSave = (saved) => {
+  //   setSave(saved);
 
-    console.log(saved, id);
-  };
+  //   console.log(saved, id);
+  // };
 
   return (
     <div
@@ -57,7 +56,7 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
       >
         {DIFFICULTIES[difficulty].text}
       </div>
-      <div className="col-span-2 flex justify-center">
+      {/* <div className="col-span-2 flex justify-center">
         <div className="hover:bg-code-gray p-1 rounded-full">
           {save ? (
             <FaBookmark
@@ -71,7 +70,7 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
             />
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
