@@ -1,11 +1,7 @@
-import Register from "@/components/register/Register";
+// import Register from "@/components/register/Register";
 
 const Page = () => {
-  return (
-    <div>
-      <Register />
-    </div>
-  );
+  return <div>{/* <Register /> */}</div>;
 };
 
 export default Page;

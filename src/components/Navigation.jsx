@@ -13,15 +13,15 @@ const Navigation = () => {
     <div className="w-full flex justify-center">
       <Navbar className="flex py-3 w-11/12 my-auto">
         <Nav className="brand">
-          <Link
+          {/* <Link
             className="flex no-underline items-center gap-2"
             href="/register"
-          >
-            <RxCross1 className=" text-2xl text-code-black bg-code-white" />
-            <p className="text-2xl pl-3 text-code-white font-semibold mb-0">
-              Apollo
-            </p>
-          </Link>
+          > */}
+          <RxCross1 className=" text-2xl text-code-black bg-code-white" />
+          <p className="text-2xl pl-3 text-code-white font-semibold mb-0">
+            Apollo
+          </p>
+          {/* </Link> */}
         </Nav>
         <Nav className="brand pl-12">
           <Link
