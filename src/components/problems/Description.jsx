@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+// import { useState } from "react";
+// import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import Tag from "../Tag";
 import { DIFFICULTIES, TOPICS } from "@/data/Table";
 
@@ -8,15 +8,15 @@ const Description = ({
   title,
   difficulty,
   topics,
-  saved,
+  // saved,
   description,
   examples,
 }) => {
-  const [save, setSave] = useState(saved);
+  // const [save, setSave] = useState(saved);
 
-  const handleSave = (state) => {
-    setSave(state);
-  };
+  // const handleSave = (state) => {
+  //   setSave(state);
+  // };
 
   return (
     <div className="h-full p-4">
@@ -29,7 +29,7 @@ const Description = ({
             {DIFFICULTIES[difficulty].text}
           </div>
         </div>
-        {save ? (
+        {/* {save ? (
           <FaBookmark
             onClick={() => handleSave(false)}
             className="hover:cursor-pointer"
@@ -39,7 +39,7 @@ const Description = ({
             onClick={() => handleSave(true)}
             className="hover:cursor-pointer"
           />
-        )}
+        )} */}
       </div>
 
       {topics.map((topic, index) => (
