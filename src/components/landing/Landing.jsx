@@ -15,14 +15,7 @@ const Landing = () => {
         to practice their fundamentals!
       </div>
       <Link text="Get Started" color="lime" link="/dashboard" />
-      <button
-        className="text-white"
-        onClick={() => {
-          console.log("yipee");
-          signIn("google");
-          console.log("clicked");
-        }}
-      >
+      <button className="text-white" onClick={() => signIn("google")}>
         CLICK ME
       </button>
     </div>

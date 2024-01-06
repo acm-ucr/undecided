@@ -1,0 +1,24 @@
+{
+  "title": "Division",
+  "difficulty": 1,
+  "topics": [1],
+  "saved": false,
+  "description": "Write a program to divide two numbers.",
+  "examples": [
+    {
+      "input": "1, 2",
+      "output": "3",
+      "description": "Because 1 / 2 is 0.5"
+    },
+    {
+      "input": "3, 4",
+      "output": "7",
+      "description": "Because 3 / 4 is 0.75"
+    }
+  ],
+  "boilerplate": {
+    "Python": "def divide(a, b):\n\nprint(divide(3, 4))",
+    "C++": "int divide(a, b){}\n\nstd::cout(divide(3, 4))",
+    "Javascript": "const divide = (a, b) => {\n\t// code here\n}\n\n// Do not change for testing purposes\nconsole.log(divide(3, 4), divide(8, 9), divide(10, 5))"
+  }
+}

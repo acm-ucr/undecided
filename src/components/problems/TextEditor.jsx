@@ -9,7 +9,7 @@ import { atomone } from "@uiw/codemirror-theme-atomone";
 import { BiSolidDownArrow } from "react-icons/bi";
 import axios from "axios";
 
-const TextEditor = ({ submit, setSubmit }) => {
+const TextEditor = ({ submit, setSubmit, boilerplate }) => {
   const [code, setCode] = useState("");
   const [show, setShow] = useState(false);
   const [language, setLanguage] = useState([python()]);
@@ -45,7 +45,7 @@ const TextEditor = ({ submit, setSubmit }) => {
         setLanguage([javascript()]);
         break;
     }
-    setCode("");
+    setCode(boilerplate[current]);
   }, [current]);
 
   return (

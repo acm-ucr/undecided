@@ -1,8 +1,20 @@
 export const TOPICS = {
-  operations: "bg-code-yellow",
-  conditionals: "bg-code-pink",
-  loops: "bg-code-purple",
-  arrays: "bg-code-blue",
+  1: {
+    color: "bg-code-yellow",
+    text: "operations",
+  },
+  2: {
+    color: "bg-code-pink",
+    text: "conditionals",
+  },
+  3: {
+    color: "bg-code-purple",
+    text: "loops",
+  },
+  4: {
+    color: "bg-code-blue",
+    text: "arrays",
+  },
 };
 
 export const DIFFICULTIES = {

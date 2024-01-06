@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Select from "../Select";
 import Row from "./Row";
@@ -7,7 +8,7 @@ const difficulties = ["Easy", "Medium", "Hard"];
 const topics = ["Operations", "Conditionals", "Loops", "Arrays"];
 const statuses = ["Not Started", "In progress", "Complete"];
 
-const Table = ({ objects }) => {
+const Table = ({ problems }) => {
   const [difficulty, setDifficulty] = useState("Difficulty");
   const [topic, setTopic] = useState("Topic");
   const [status, setStatus] = useState("Status");
@@ -40,14 +41,14 @@ const Table = ({ objects }) => {
       </div>
 
       <div className="grid grid-cols-16 border-b-2 border-code-darkgray pb-2">
-        <div className="col-span-2 text-center">Status</div>
+        {/* <div className="col-span-2 text-center">Status</div> */}
         <div className="col-span-6">Title</div>
         <div className="col-span-4">Topics</div>
         <div className="col-span-2 text-center">Difficulty</div>
         <div className="col-span-2" />
       </div>
 
-      {objects.map(
+      {problems.map(
         ({ id, title, status, topics, difficulty, saved }, index) => (
           <Row
             key={index}

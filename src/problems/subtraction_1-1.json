@@ -1,0 +1,19 @@
+{
+  "title": "Subtraction",
+  "difficulty": 1,
+  "topics": [1],
+  "saved": false,
+  "description": "Write a program to subtract two numbers.",
+  "examples": [
+    {
+      "input": "1, 2",
+      "output": "3",
+      "description": "Because 1 - 0 is 1"
+    },
+    {
+      "input": "3, 4",
+      "output": "7",
+      "description": "Because 3 - 4 is -1"
+    }
+  ]
+}

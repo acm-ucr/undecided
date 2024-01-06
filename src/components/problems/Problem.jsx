@@ -21,30 +21,11 @@ const TABS = [
   },
 ];
 
-const Data = {
-  title: "Two Sum",
-  difficulty: 1,
-  topics: ["operations"],
-  saved: false,
-  description:
-    "Write a program to sum two numbers. Print out the result using the console.log() function",
-  examples: [
-    {
-      input: "1, 2",
-      output: "3",
-      description: "Because 1 + 2 is 3",
-    },
-    {
-      input: "3, 4",
-      output: "7",
-      description: "Because 3 + 4 is 7",
-    },
-  ],
-};
-
-const Problem = () => {
+const Problem = ({ problem }) => {
   const [current, setCurrent] = useState(1);
   const [submit, setSubmit] = useState(false);
+
+  console.log(problem);
 
   return (
     <>
@@ -64,11 +45,15 @@ const Problem = () => {
                 </p>
               ))}
             </div>
-            {current === 1 && <Description {...Data} />}
+            {current === 1 && <Description {...problem} />}
             {current === 2 && <Solutions />}
             {current === 3 && <Submission />}
           </div>
-          <TextEditor submit={submit} setSubmit={setSubmit} />
+          <TextEditor
+            submit={submit}
+            setSubmit={setSubmit}
+            boilerplate={problem.boilerplate}
+          />
         </div>
       )}
       {submit && <Splash submit={submit} setSubmit={setSubmit} />}

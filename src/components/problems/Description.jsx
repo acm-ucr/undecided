@@ -24,7 +24,7 @@ const Description = ({
         <div className="flex items-center">
           {title}
           <div
-            className={`text-base my-2 mx-3 ${DIFFICULTIES[difficulty].color}`}
+            className={` text-lg  mx-2 flex justify-center ${DIFFICULTIES[difficulty].color}`}
           >
             {DIFFICULTIES[difficulty].text}
           </div>
@@ -43,7 +43,11 @@ const Description = ({
       </div>
 
       {topics.map((topic, index) => (
-        <Tag key={index} text={topic} color={TOPICS[topic]} />
+        <Tag
+          key={index}
+          text={TOPICS[difficulty].text}
+          color={TOPICS[difficulty].color}
+        />
       ))}
 
       <div className="my-3">{description}</div>

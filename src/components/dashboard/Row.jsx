@@ -1,8 +1,8 @@
 import {
   FaRegBookmark,
   FaBookmark,
-  FaCircleHalfStroke,
-  FaCircle,
+  // FaCircleHalfStroke,
+  // FaCircle,
 } from "react-icons/fa6";
 import Tag from "../Tag";
 import { DIFFICULTIES, TOPICS } from "@/data/Table";
@@ -25,7 +25,7 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
         hovered && "opacity-50"
       } grid grid-cols-16 items-center py-3 `}
     >
-      <div className="col-span-2 flex justify-center">
+      {/* <div className="col-span-2 flex justify-center">
         {status === 1 ? (
           <FaCircle />
         ) : status === 0 ? (
@@ -33,7 +33,7 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
         ) : (
           <></>
         )}
-      </div>
+      </div> */}
       <Link
         href={`/problems/${id}`}
         target="_blank"
@@ -45,7 +45,11 @@ const Row = ({ id, title, status, topics, difficulty, saved, index }) => {
       </Link>
       <div className="col-span-4 flex justify-start">
         {topics.map((topic, index) => (
-          <Tag key={index} text={topic} color={TOPICS[topic]} />
+          <Tag
+            key={index}
+            text={TOPICS[topic].text}
+            color={TOPICS[topic].color}
+          />
         ))}
       </div>
       <div
