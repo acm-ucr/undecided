@@ -15,7 +15,7 @@ const TextEditor = ({ submit, setSubmit, boilerplate }) => {
   const [language, setLanguage] = useState([python()]);
   const [current, setCurrent] = useState("Python");
 
-  const languages = ["Python", "C++", "Javascript"];
+  const languages = { Python: 71, "C++": 54, Javascript: 63 };
 
   const handleRun = () => {
     console.log("RUN CODE");
@@ -24,7 +24,7 @@ const TextEditor = ({ submit, setSubmit, boilerplate }) => {
   const handleSubmit = () => {
     axios.post("/api/execute", {
       code,
-      language: 71,
+      language: languages[current],
     });
     // setSubmit(true);
   };
@@ -57,7 +57,7 @@ const TextEditor = ({ submit, setSubmit, boilerplate }) => {
       >
         <div className="w-1/4 p-1.5">
           <Select
-            options={languages}
+            options={Object.keys(languages)}
             placeholder={"No languages found"}
             current={current}
             setCurrent={setCurrent}
