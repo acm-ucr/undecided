@@ -17,9 +17,9 @@ const TextEditor = ({ submit, setSubmit, boilerplate }) => {
 
   const languages = ["Python", "C++", "Javascript"];
 
-  const handleRun = () => {
-    console.log("RUN CODE");
-  };
+  // const handleRun = () => {
+  //   console.log("RUN CODE");
+  // };
 
   const handleSubmit = () => {
     axios.post("/api/execute", {
@@ -92,12 +92,12 @@ const TextEditor = ({ submit, setSubmit, boilerplate }) => {
             />
           </button>
           <div className="flex gap-3">
-            <Button
+            {/*            <Button
               text="Run"
               bg="bg-code-darkgray"
               color="text-white"
               onClick={handleRun}
-            />
+            />*/}
             <Button
               text="Submit"
               bg="bg-code-lime"
